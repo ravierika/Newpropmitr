@@ -36,14 +36,17 @@ Route::resource('/customers', 'CustomerController');
 
 Route::get('/{page}', 'AdminController@index');
 
-
+Route::get('photo', 'UploadController@index');
+Route::post('save-photo', 'UploadController@save')->name('save.photo');
+Route::post('save-logo', 'UploadController@savelogo')->name('save.logo');
+Route::post('user-update/{user}', 'UploadController@userupdate')->name('user.update');
+Route::post('user-update-password/{user}', 'UploadController@userupdatepassword')->name('user.update.password');
 
 Route::group(['middleware'=>'admin'], function(){
 
     Route::resource('admin/users', 'AdminUsersController');
     Route::delete('admin/users/{user}/destroy', 'AdminUsersController@destroy')->name('users.destroy');
     Route::get('admin/users/{user}/profile', 'AdminUsersController@show')->name('users.show');
-    Route::post('save_image', 'AdminUsersController@save_image')->name('save.profile.picture');
 
 });
 

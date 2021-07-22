@@ -66,19 +66,11 @@ class AdminUsersController extends Controller
     {
         //
         $input = $request->all();
-        $file = $request->file('file_id');
-        if($file = $request->file('file_id')){
-
-            $name = time() . $file->getClientOriginalName();
-
-            $file->move('images', $name);
-
-            $photo = file::create(['path'=>$name]);
-
-            $input['file_id'] = $photo->id;
-        }
+        $file = "testing.25885";
+        $input['file_id'] = $file;
 
         $input['password'] = bcrypt($request->password);
+        
         User::create($input);
         return redirect('/admin/users')->with('success', 'User added successfully');
 
@@ -157,6 +149,8 @@ class AdminUsersController extends Controller
         return redirect('/admin/users')->with('success', 'User deleted successfully');
     }
 
+    
+
     public function show($id)
     {
         //
@@ -172,20 +166,5 @@ class AdminUsersController extends Controller
         
         return view('admin.users.profile', compact('user', 'comp', 'name', 'role', 'facebook', 'twitter', 'insta', 'linkedin'));
     }
-    public function save_image(Request $request) {
-        $user = new User;   
-       if ($request->hasFile('picture')) {
-           $completeFileName = $request->file('picture')->getClientOriginalName();
-           $fileNameOnly = pathinfo($completeFileName, PATHINFO_FILENAME);
-           $extension = $request->file('picture')->getClientOriginalExtension();
-           $compPic = str_replace(' ', '_', $fileNameOnly).'-'. rand() .'_'.time().'.'.$extension;
-           $path = $request->file('picture')->storeAs('public/users', $compPic);
-           $user->picture = 'users/'.$compPic;
-       }
-       if($user->save()){
-           echo 200;
-       }else{
-           echo 700;
-       }
-   }
+    
 }

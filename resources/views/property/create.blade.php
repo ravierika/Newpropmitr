@@ -62,7 +62,7 @@
                                         <select name="type" class="form-control show-tick ms select2" data-placeholder="Select">
                                             <option value="">-- Property Type --</option>
                                             <optgroup label="Residential">
-                                                <option value="FA">Flat/Apartment</option>
+                                                <option value="Resindential Apartment">Resindential Apartment</option>
                                                 <option value="RH">Residential House</option>
                                                 <option value="V">Villa</option>
                                                 <option value="BL">Builder Floor</option>
@@ -302,7 +302,7 @@
                                 <div class="col-sm-12">
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <textarea rows="1" name="description" class="form-control no-resize" placeholder="Please type some description to highlight your property"></textarea>
+                                            <textarea rows="1" maxlength="500" name="description" class="form-control no-resize" placeholder="Please type some description to highlight your property (Max 500 characters)"></textarea>
                                         </div>
                                     </div>
                                 </div>

@@ -42,6 +42,8 @@
                     <div class="body">
                         <form class="form-horizontal" method="Post" action="{{route('users.store')}}" files="true">
                             {{ csrf_field() }}
+                            <input type="hidden" value="{{Auth::user()->companyid}}" name="companyid">
+                            <input type="hidden" value="{{Auth::user()->companyinitials}}" name="companyinitials">
                         <div class="row clearfix">
                             <div class="col-sm-4">
                                 <div class="form-group">

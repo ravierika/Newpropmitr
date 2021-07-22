@@ -35,13 +35,12 @@
                                 <thead>
                                     <tr>
                                         <th>Property ID</th>
-                                        <th>Property</th>
+                                        <th>Sale/Rent</th>
                                         <th>City</th>
                                         <th>Location</th>
                                         <th>Beds</th>
                                         <th>sq. ft</th>
                                         <th>Agent</th>
-                                        <th>Sale/Rent</th>
                                         <th>Price</th>
                                     </tr>
                                 </thead>
@@ -49,13 +48,12 @@
                                     @foreach($properties as $property)  
                                         <tr>
                                             <td>{{$property->id}}</td>
-                                            <td><a href="{{route('properties.edit', $property->id)}}"> {{$property->description}}</a></td>
+                                            <td><a href="{{route('properties.edit', $property->id)}}"> <span class="badge badge-primary mb-0">{{$property->for}}</span></a></td>
                                             <td>{{$property->city}}</td>
                                             <td>{{$property->locality}}</td>
                                             <td>{{$property->bedrooms}} BHK</td>
                                             <td>{{$property->carpetArea}} ft2</td>
                                             <td>{{$property->agent}}</td>
-                                            <td><span class="badge badge-primary mb-0">{{$property->for}}</span></td>
                                             <td>₹ {{$property->expectedPrice}}</td>
                                         </tr>
                                     @endforeach 

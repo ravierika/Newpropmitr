@@ -1,11 +1,19 @@
 
+html {
+    scroll-behavior: smooth;
+}
 a{text-decoration: none;}
 .card-content{
     background-color:#fffbdf
 }
 .price{
     font-size: 23px;
-    font-weight: bold;
+    /* font-weight: bold; */
+}
+.small_detail{
+    padding: 5px;
+    background:#e8e6df;
+    border-radius: 5px;
 }
 .small {
     font-size: 13px;
@@ -68,3 +76,26 @@ a{text-decoration: none;}
 #more5 {display: none;}
 #more6 {display: none;}
 #more7 {display: none;}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link ,.nav-pills .nav-link:hover{
+    color: #7e6990;
+    background-color: transparent;
+    border-radius: 0;
+}
+.hover{
+    
+    font-weight: 600;
+}
+.hover:hover{
+    border-bottom:2px solid #007bff;
+}
+
+.fw-bold{
+    font-weight: 600;
+}
+p{
+    margin-bottom: 0;
+}
+.fw-normal{
+    font-weight: normal;
+}

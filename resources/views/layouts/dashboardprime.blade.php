@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="RealEstate Admin Dashboard template, UI kit, Bootstrap 4x">
 <meta name="author" content="Thememakker">
+<meta name="csrf-token" content="{{ csrf_token() }}">
 
 <title>:: Propertymitr RealEstate :: Home</title>
 <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Favicon-->
@@ -18,6 +19,7 @@
 <link rel="stylesheet" href="{{URL::asset('assets/plugins/dropzone/dropzone.css')}}">
 <link rel="stylesheet" href="{{URL::asset('assets/plugins/bootstrap-select/css/bootstrap-select.css')}}"/>
 <link rel="stylesheet" href="{{URL::asset('assets/plugins/select2/select2.css')}}" />
+<link rel="stylesheet" href="{{URL::asset('assets/plugins/ijabocrop/ijaboCropTool.min.css')}}" />
 <link rel="stylesheet" href="{{URL::asset('dist/image-uploader.min.css')}}">
 
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -40,6 +42,19 @@
     pointer-events: auto;
     content: "";
     background-color: rgba(0,0,0,0);
+}
+.card .card-footer {
+   z-index: 1;
+   position: relative;
+}
+.card .read_more_btn {
+   z-index: 1;
+   position: relative;
+}
+
+.no-border {
+    border: 0;
+    box-shadow: none; /* You may want to include this as bootstrap applies these styles too */
 }
 
   </style>
@@ -162,9 +177,9 @@
                 <ul class="list">
                     <li>
                         <div class="user-info">
-                            <div class="image"><a href="{{route('users.show', (Auth::user()->id))}}"><img src="{{URL::asset('assets/images/profile_av.jpg')}}" alt="User"></a></div>
+                            <div class="image"><a href="{{route('users.show', (Auth::user()->id))}}" ><img src="{{ asset('storage/logoimages/' . (Auth::user()->companylogo)) }}" alt="Logo"></a></div>
                             <div class="detail">
-                                <h4>{{$name}}</h4>
+                                <a href="{{route('users.show', (Auth::user()->id))}}"><h4>{{$name}}</h4></a>
                                 <small>{{$role}}</small>
                             </div>
                             <a title="facebook" href="{{$facebook}}" target="_blank"> <i class="zmdi zmdi-facebook"></i></a>
@@ -849,6 +864,7 @@
 <script src="{{URL::asset('assets/bundles/c3.bundle.js')}}"></script>
 <script src="{{URL::asset('assets/bundles/jvectormap.bundle.js')}}"></script>
 <script src="{{URL::asset('assets/bundles/knob.bundle.js')}}"></script>
+<script src="{{URL::asset('assets/plugins/ijabocrop/ijaboCropTool.min.js')}}"></script>
 
 
 <script src="{{URL::asset('assets/js/pages/index.js')}}"></script>

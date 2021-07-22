@@ -63,6 +63,9 @@
                     </div>
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
+                        <input type="hidden"  name="companyid">
+                        <input type="hidden"  id="companyinit" name="companyinitials">
+
                         <div class="input-group">
                             <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" placeholder="User Name" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
@@ -124,7 +127,7 @@
                             </label>
                     </div>
                     <div class="footer text-center">
-                        <button type="submit" class="btn btn-primary btn-round btn-lg btn-block waves-effect waves-light">SIGN UP  
+                        <button type="submit" onclick="getInputValue();" class="btn btn-primary btn-round btn-lg btn-block waves-effect waves-light">SIGN UP  
                         </button>                        
                     </div>
                 </form>
@@ -154,6 +157,18 @@
    $(".navbar-toggler").on('click',function() {
     $("html").toggleClass("nav-open");
 });
+
+function getInputValue(){
+            // Selecting the input element and get its value 
+            var inputVal = document.getElementById("company").value;
+            var inputId = document.getElementById("company").value;
+
+            // Displaying the value
+            let acronym = inputVal.split(/\s/).reduce((response,word)=> response+=word.slice(0,1),'')
+            console.log(acronym);
+            document.getElementById("companyinit").value = acronym;
+        }
+
 </script>
 </body>
 </html>

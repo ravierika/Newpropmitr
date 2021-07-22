@@ -17,6 +17,8 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('company');
+            $table->string('companyid');
+            $table->string('companyinitials');
             $table->Integer('role_id')->default(1)->useCurrent();
             $table->string('email')->unique();
             $table->string('gender')->nullable();
@@ -27,7 +29,8 @@ class CreateUsersTable extends Migration
             $table->string('city')->nullable();
             $table->Integer('deal')->nullable();
             $table->Integer('value')->nullable();
-            $table->string('file_id')->nullable();
+            $table->string('file')->nullable();
+            $table->string('companylogo')->nullable();
             $table->string('facebook')->nullable();
             $table->string('twitter')->nullable();
             $table->string('insta')->nullable();
