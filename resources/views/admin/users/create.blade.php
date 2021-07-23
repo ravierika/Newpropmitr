@@ -10,7 +10,7 @@
                 <h2>Add Agent
                 <small>Welcome to {{$comp}}</small>
                 </h2>
-            </div>            
+            </div>
             <div class="col-lg-7 col-md-7 col-sm-12 text-md-right">
                 <div class="inlineblock text-center m-r-15 m-l-15 hidden-md-down">
                     <div class="sparkline" data-type="bar" data-width="97%" data-height="25px" data-bar-Width="2" data-bar-Spacing="5" data-bar-Color="#fff">3,2,6,5,9,8,7,9,5,1,3,5,7,4,6</div>
@@ -37,40 +37,45 @@
                 <div class="card">
                     <div class="header">
                         <h2><strong>Personal</strong> Information <small></small> </h2>
-                        
+
                     </div>
                     <div class="body">
                         <form class="form-horizontal" method="Post" action="{{route('users.store')}}" files="true">
                             {{ csrf_field() }}
-                            <input type="hidden" value="{{Auth::user()->companyid}}" name="companyid">
-                            <input type="hidden" value="{{Auth::user()->companyinitials}}" name="companyinitials">
                         <div class="row clearfix">
                             <div class="col-sm-4">
                                 <div class="form-group">
-                                    <input type="text" name="name" class="form-control" placeholder="Name" required>
+                                    {{-- <div class=""> --}}
+                                        <label class="d-flex align-items-center" for="name"><span class="red ml-3">*</span> <span>Name</span></label>
+                                        <input type="text" name="name" class="form-control" placeholder="Name" required>
+                                    {{-- </div> --}}
                                 </div>
                             </div>
-                            
+
                             <div class="col-sm-4">
                                 <div class="form-group">
+                                    <label class="d-flex align-items-center" for="mobile"><span class="red ml-3">*</span> <span>Phone</span></label>
                                     <input type="text" name="mobile" class="form-control" placeholder="Phone No.">
                                 </div>
                             </div>
-                            
+
                             <div class="col-sm-3">
                                 <div class="form-group">
+                                    <label class="d-flex align-items-center" for="age"><span class="red ml-3">*</span> <span>Age</span></label>
                                     <input type="text" name="age" class="form-control" placeholder="Age">
                                 </div>
                             </div>
                             <div class="col-sm-3">
+                                <label class="d-flex align-items-center" for="gender"><span class="red ml-3">*</span> <span>Gender</span></label>
                                 <select name="gender" class="form-control show-tick">
-                                    <option value="">-- Gender --</option>
+                                    {{-- <option value="">-- Gender --</option> --}}
                                     <option value="10">Male</option>
                                     <option value="20">Female</option>
                                 </select>
                             </div>
                             <div class="col-sm-3">
                                 <div class="form-group">
+                                    <label class="d-flex align-items-center" for="email"><span class="red ml-3">*</span> <span>Email</span></label>
                                     <input type="email" name="email" class="form-control" placeholder="Enter Your Email">
                                 </div>
                             </div>
@@ -79,45 +84,58 @@
                         <div class="row clearfix">
                             <div class="col-md-3 col-sm-6">
                                 <div class="form-group">
+                                    <label class="d-flex align-items-center" for="company"><span class="red ml-3">*</span> <span>Company</span></label>
                                     <input type="text" name="company" class="form-control" readonly="" id="inputCompany" value="{{$comp}}">
                                 </div>
                             </div>
 
                             <div class="col-sm-3">
+                                <label class="d-flex align-items-center" for="role_id"><span class="red ml-3">*</span> <span>Role</span></label>
                                 <select name="role_id" class="form-control show-tick">
-                                    <option value="">-- Role --</option>
+                                    {{-- <option value="">-- Role --</option> --}}
                                     <option value="2" >User</option>
                                     <option value="3" >Accountant</option>
                                     <option value="1" >Administrator</option>
                                 </select>
                             </div>
-                        
+
                             <div class="col-md-3 col-sm-6">
                                 <div class="form-group">
+                                    <label class="d-flex align-items-center" for="password"><span class="red ml-3">*</span> <span>Password</span></label>
                                     <input type="password" name="password" class="form-control" placeholder="Password">
                                 </div>
                             </div>
-                            
+                            <div class="col-md-3 col-sm-6">
+                                <div class="form-group">
+                                    <label class="d-flex align-items-center" for="conPassword"><span class="red ml-3">*</span> <span>Confirm Password</span></label>
+                                    <input type="password" name="conPassword" class="form-control" placeholder="Confirm Password">
+                                </div>
+                            </div>
+
                         </div>
                         <h6 class="mt-4">Social Information</h6>
                         <div class="row clearfix">
                             <div class="col-md-3 col-sm-6">
                                 <div class="form-group">
+                                    <label class="ml-1" for="facebook">Facebook</label>
                                     <input type="text" name="facebook" class="form-control" placeholder="Facebook">
                                 </div>
                             </div>
                             <div class="col-md-3 col-sm-6">
                                 <div class="form-group">
+                                    <label class="ml-1" for="twitter">Twitter</label>
                                     <input type="text" name="twitter" class="form-control" placeholder="Twitter">
                                 </div>
                             </div>
                             <div class="col-md-3 col-sm-6">
                                 <div class="form-group">
+                                    <label class="ml-1" for="google">Google</label>
                                     <input type="text" name="google" class="form-control" placeholder="Google">
                                 </div>
                             </div>
                             <div class="col-md-3 col-sm-6">
                                 <div class="form-group">
+                                    <label class="ml-1" for="linkedin">Linkedin</label>
                                     <input type="text" name="linkedin" class="form-control" placeholder="Linkdin">
                                 </div>
                             </div>
@@ -125,7 +143,7 @@
                                 <h6 class="mt-4">Upload Image</h6>
 
                                 <div class="form-group mb-0">
-                                    <input id="demo" type="file_id" name="files" accept=".jpg, .png, image/jpeg, image/png" multiple>
+                                    <input id="demo" type="file" name="files" accept=".jpg, .png, image/jpeg, image/png" multiple>
                                 </div>
                             </div>
                             <div class="col-sm-12 mt-4">
