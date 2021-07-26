@@ -301,6 +301,7 @@
     </div>
 </section>
 @section('scripts')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script type="text/javascript">
 
     $(document).ready(function (e) {
@@ -430,7 +431,11 @@ $(document).ready(function (e) {
           processData: false,
           success: (data) => {
               this.reset();
-              location.reload();
+            //   location.reload();
+
+            swal("Greate","Your Password Is Changed","success",{
+                button:"OK",
+            })
           },
           error: function(data){
             //   console.log(data);
