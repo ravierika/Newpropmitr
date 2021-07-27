@@ -431,7 +431,7 @@ $(document).ready(function (e) {
           processData: false,
           success: (data) => {
               this.reset();
-            //location.reload();
+            location.reload();
 
             swal("Greate","Your Password Is Changed","success",{
                 button:"OK",
