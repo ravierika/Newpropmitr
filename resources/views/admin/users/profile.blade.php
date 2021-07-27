@@ -435,6 +435,7 @@ $(document).ready(function (e) {
 
             swal("Greate","Your Password Is Changed","success",{
                 button:"OK",
+
             })
           },
           error: function(data){
