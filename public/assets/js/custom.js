@@ -15,6 +15,9 @@ function myFunction(id) {
 }
 
 
-function infoToggle(){
-    console.log('click');
+function infoToggle(id,infoId){
+    const info = document.getElementById(id);
+    const infoIdFixed = document.getElementById(infoId);
+    info.classList.toggle('d-none');
+    infoIdFixed.classList.toggle('d-none')
 }

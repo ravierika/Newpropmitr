@@ -130,47 +130,16 @@
 
                             </div>
                             <div class="col-md-9 mb-2">
-                                <div class="row icofont-company-icon">
+                                <h2 class="mb-1"><strong>{{$comp}}</strong></h2>
+                                <p class="mb-3 author_info">Company Tagline Here</p>
 
-                                    <div class="col-sm-4 border-right">
-                                        <div class="view text-center my-3">
-                                            <i class="zmdi zmdi-camera col-amber"></i>
-                                            <h5 class="m-b-0 number count-to" data-from="0" data-to="2365" data-speed="1000" data-fresh-interval="700">2365</h5>
-                                            <small>Shots View</small>
-                                        </div>
-                                        <div class="view text-center my-3">
-                                            <i class="zmdi zmdi-account text-success"></i>
-                                            <h5 class="m-b-0 number count-to" data-from="0" data-to="1980" data-speed="1000" data-fresh-interval="700">1980</h5>
-                                            <small>Profile Views</small>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-4 border-right">
-                                        <div class="view text-center my-3">
-                                            <i class="zmdi zmdi-thumb-up col-blue"></i>
-                                            <h5 class="m-b-0 number count-to" data-from="0" data-to="1203" data-speed="1000" data-fresh-interval="700">1203</h5>
-                                            <small>Likes</small>
-                                        </div>
-                                        <div class="view text-center my-3">
-                                            <i class="zmdi zmdi-desktop-mac text-info"></i>
-                                            <h5 class="m-b-0 number count-to" data-from="0" data-to="251" data-speed="1000" data-fresh-interval="700">251</h5>
-                                            <small>Website View</small>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-4 border-right">
-                                        <div class="view text-center my-3">
-                                            <i class="zmdi zmdi-comment-text col-red"></i>
-                                            <h5 class="m-b-0 number count-to" data-from="0" data-to="324" data-speed="1000" data-fresh-interval="700">324</h5>
-                                            <small>Comments</small>
-                                        </div>
-                                        <div class="view text-center my-3">
-                                            <i class="zmdi zmdi-attachment text-warning"></i>
-                                            <h5 class="m-b-0 number count-to" data-from="0" data-to="52" data-speed="1000" data-fresh-interval="700">52</h5>
-                                            <small>Attachment</small>
-                                        </div>
-                                    </div>
-
+                                <p class="mb-0 author_info">795 Folsom Ave, Suite 600</p>
+                                <p class="mb-0 author_info">San Francisco, CARDGE 94107</p>
+                                <div class="social_link">
+                                    <a title="facebook" href="" target="_blank" class=" waves-effect waves-block"> <i class="zmdi zmdi-facebook"></i></a>
+                                    <a title="twitter" href="" class=" waves-effect waves-block"><i class="zmdi zmdi-twitter"></i></a>
+                                    <a title="instagram" href="" class=" waves-effect waves-block"><i class="zmdi zmdi-instagram"></i></a>
+                                    <a title="instagram" href="" class=" waves-effect waves-block"><i class="zmdi zmdi-behance"></i></i></a>
                                 </div>
                             </div>
                         </div>
@@ -183,10 +152,10 @@
                 <div class="card">
                     <ul class="nav nav-tabs">
                         <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#about">About</a></li>
-                        <li class="nav-item"><a onclick="infoToggle()" class="nav-link active" data-toggle="tab" href="#about">Edit</a></li>
+                        <li class="nav-item"><a onclick="infoToggle('profileInfoEdit','profileInfo')" class="nav-link active" data-toggle="tab" href="#about">Edit</a></li>
                     </ul>
                     <div class="tab-content">
-                        <form method="POST" enctype="multipart/form-data" id="update_user" action="javascript:void(0)" >
+                        <form class="d-none" id="profileInfoEdit" method="POST" enctype="multipart/form-data" id="update_user" action="javascript:void(0)" >
                             @csrf
                         <div class="tab-pane body active" id="about">
                             <small class="text-muted">Email address: </small>
@@ -209,6 +178,12 @@
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
                         </form>
+                        <div class="body" id="profileInfo">
+                            <p class="text-muted">Email address: {{$user->email}}</p>
+                            <p class="text-muted">Age: {{$user->age}}</p>
+                            <p class="text-muted">Mobile: {{$user->mobile}}</p>
+                            <p class="text-muted">Role: {{$role}}</p>
+                        </div>
                     </div>
                 </div>
 
@@ -222,6 +197,7 @@
                                 @csrf
                             <div class="body">
                                 <div class="form-group">
+                                    <label for="currentpassword">Current Password <span class="red ml-1">*</span></label>
                                     <input id="currentpassword" type="password" name="currentpassword" class="form-control @error('currentpassword') is-invalid @enderror" placeholder="Current Password" required autocomplete="currentpassword">
                                     <span class="passError red" id="currentPassError"></span>
                                     {{-- @error('currentpassword')
@@ -232,6 +208,7 @@
 
                                 </div>
                                 <div class="form-group">
+                                    <label for="password">New Password <span class="red ml-1">*</span></label>
                                     <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password" name="password" required autocomplete="password">
                                     <span class="passError red" id="passError"></span>
                                     {{-- @error('password')
@@ -241,6 +218,7 @@
                                     @enderror --}}
                                 </div>
                                 <div class="form-group">
+                                    <label for="confirmpassword">Confirm Password <span class="red ml-1">*</span></label>
                                     <input id="confirmpassword" type="password" class="form-control @error('confirmpassword') is-invalid @enderror" placeholder="Confirm Password" name="confirmpassword" required autocomplete="confirmpassword">
                                     {{-- @error('confirmpassword')
                                         <span class="invalid-feedback" role="alert">
@@ -255,33 +233,60 @@
                         </div>
                         <div class="card">
                             <div class="header">
-                                <h2><strong>Account</strong> Settings</h2>
+                                <ul class="nav nav-tabs p-0 d-flex align-items-center">
+                                    <h2><strong>Account</strong> Settings</h2>
+                                    <li class="nav-item ml-2"><a onclick="infoToggle('companyInfo','companyFixedInfo')" class="nav-link active" data-toggle="tab" href="#about">Edit</a></li>
+                                </ul>
                             </div>
                             <div class="body">
-                                <div class="row clearfix">
+                                <div id="companyInfo" class="row clearfix d-none">
                                     <div class="col-lg-6 col-md-12">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="First Name">
+                                            <label for="cname">Company Name<span class="red ml-1">*</span></label>
+                                            <input id="cname" type="text" class="form-control" placeholder="Company Name">
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-12">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Last Name">
+                                            <label for="cEmail">Company Email<span class="red ml-1">*</span></label>
+                                            <input id="cEmail" type="email" class="form-control" placeholder="Company Email">
                                         </div>
                                     </div>
                                     <div class="col-lg-4 col-md-12">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="City">
+                                            <label for="city">City<span class="red ml-1">*</span></label>
+                                            <input id="city" type="text" class="form-control" placeholder="City">
                                         </div>
                                     </div>
                                     <div class="col-lg-4 col-md-12">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="E-mail">
+                                            <label for="country">Country<span class="red ml-1">*</span></label>
+                                            <input id="country" type="text" class="form-control" placeholder="Country">
                                         </div>
                                     </div>
                                     <div class="col-lg-4 col-md-12">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Country">
+                                            <label for="cPhone">Company Phone<span class="red ml-1">*</span></label>
+                                            <input id="cPhone" type="text" class="form-control" placeholder="Company Phone">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-12">
+                                        <div class="form-group">
+                                            <label for="cfb">Company Facebook</label>
+                                            <input id="cfb" type="text" class="form-control" placeholder="Company Facebook">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-12">
+                                        <div class="form-group">
+                                            <label for="cins">Company Instagram</label>
+                                            <input id="cins" type="text" class="form-control" placeholder="Company Instagram">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-12">
+                                        <div class="form-group">
+                                            <label for="cbh">Company Behance</label>
+                                            <input id="cbh" type="text" class="form-control" placeholder="Company Behance">
                                         </div>
                                     </div>
                                     <div class="col-md-12">
@@ -291,6 +296,19 @@
                                     </div>
                                     <div class="col-md-12">
                                         <button class="btn btn-primary btn-round">Save Changes</button>
+                                    </div>
+                                </div>
+                                <div id="companyFixedInfo">
+                                    <p class="text-muted">Company Name: {{$comp}}</p>
+                                    <p class="text-muted">Company Email: </p>
+                                    <p class="text-muted">Company Phone: </p>
+                                    <p>Company Address: </p>
+                                    <p class="text-muted">Company Social Media: </p>
+                                    <div class="social_link mt-2">
+                                        <a title="facebook" href="" target="_blank" class=" waves-effect waves-block"> <i class="zmdi zmdi-facebook"></i></a>
+                                        <a title="twitter" href="" class=" waves-effect waves-block"><i class="zmdi zmdi-twitter"></i></a>
+                                        <a title="instagram" href="" class=" waves-effect waves-block"><i class="zmdi zmdi-instagram"></i></a>
+                                        <a title="instagram" href="" class=" waves-effect waves-block"><i class="zmdi zmdi-behance"></i></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -306,6 +324,7 @@
 <script src="{{URL::asset('assets/js/custom.js')}}"></script>
 <script type="text/javascript">
 
+// @Naeem@575 /755@
     $(document).ready(function (e) {
 
         $.ajaxSetup({
