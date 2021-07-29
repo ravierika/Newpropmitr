@@ -68,11 +68,11 @@
 
                             </div>
                             <div class="col-md-9 mb-2 pl-4">
-                                <h2 class="mb-1"><strong>{{$name}}</strong></h2>
-                                <p class="mb-3 author_info">Web Developer</p>
+                                <h4 class="mb-1"><strong>{{$name}}</strong> Last Name</h4>
+                                <p class="mb-2 author_info"><small>Web Developer</small></p>
 
-                                <p class="mb-0 author_info">795 Folsom Ave, Suite 600</p>
-                                <p class="mb-0 author_info">San Francisco, CARDGE 94107</p>
+                                <p class="mb-0 author_info"><small>795 Folsom Ave, Suite 600</small></p>
+                                <p class="mb-0 author_info"><small>San Francisco, CARDGE 94107</small></p>
                                 <div class="social_link">
                                     <a title="facebook" href="" target="_blank" class=" waves-effect waves-block"> <i class="zmdi zmdi-facebook"></i></a>
                                     <a title="twitter" href="" class=" waves-effect waves-block"><i class="zmdi zmdi-twitter"></i></a>
@@ -130,11 +130,11 @@
 
                             </div>
                             <div class="col-md-9 mb-2">
-                                <h2 class="mb-1"><strong>{{$comp}}</strong></h2>
-                                <p class="mb-3 author_info">Company Tagline Here</p>
+                                <h4 class="mb-1"><strong>{{$comp}}</strong></h4>
+                                <p class="mb-2 author_info"><small>Company Tagline Here</small></p>
 
-                                <p class="mb-0 author_info">795 Folsom Ave, Suite 600</p>
-                                <p class="mb-0 author_info">San Francisco, CARDGE 94107</p>
+                                <p class="mb-0 author_info"><small>795 Folsom Ave, Suite 600</small></p>
+                                <p class="mb-0 author_info"><small>San Francisco, CARDGE 94107</small></p>
                                 <div class="social_link">
                                     <a title="facebook" href="" target="_blank" class=" waves-effect waves-block"> <i class="zmdi zmdi-facebook"></i></a>
                                     <a title="twitter" href="" class=" waves-effect waves-block"><i class="zmdi zmdi-twitter"></i></a>
@@ -150,7 +150,7 @@
         <div class="row clearfix">
             <div class="col-lg-12 col-md-12">
                 <div class="card">
-                    <ul class="nav nav-tabs">
+                    <ul class="nav nav-tabs d-flex justify-content-between">
                         <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#about">About</a></li>
                         <li class="nav-item"><a onclick="infoToggle('profileInfoEdit','profileInfo')" class="nav-link active" data-toggle="tab" href="#about">Edit</a></li>
                     </ul>
@@ -179,10 +179,15 @@
                         </div>
                         </form>
                         <div class="body" id="profileInfo">
-                            <p class="text-muted">Email address: {{$user->email}}</p>
-                            <p class="text-muted">Age: {{$user->age}}</p>
-                            <p class="text-muted">Mobile: {{$user->mobile}}</p>
-                            <p class="text-muted">Role: {{$role}}</p>
+                            <p class="text-muted">Email address:</p>
+                            <p>{{$user->email}}</p>
+                            <hr>
+                            <p class="text-muted">Age:</p>
+                            <p>{{$user->age}}</p><hr>
+                            <p class="text-muted">Mobile:</p>
+                            <p>{{$user->mobile}}</p><hr>
+                            <p class="text-muted">Role:</p>
+                            <p>{{$role}}</p>
                         </div>
                     </div>
                 </div>
@@ -233,7 +238,7 @@
                         </div>
                         <div class="card">
                             <div class="header">
-                                <ul class="nav nav-tabs p-0 d-flex align-items-center">
+                                <ul class="nav nav-tabs p-0 d-flex align-items-center justify-content-between">
                                     <h2><strong>Account</strong> Settings</h2>
                                     <li class="nav-item ml-2"><a onclick="infoToggle('companyInfo','companyFixedInfo')" class="nav-link active" data-toggle="tab" href="#about">Edit</a></li>
                                 </ul>
@@ -299,10 +304,16 @@
                                     </div>
                                 </div>
                                 <div id="companyFixedInfo">
-                                    <p class="text-muted">Company Name: {{$comp}}</p>
+                                    <p class="text-muted">Company Name:</p>
+                                    <p>{{$comp}}</p> <hr>
                                     <p class="text-muted">Company Email: </p>
+                                    <p></p> <hr>
                                     <p class="text-muted">Company Phone: </p>
-                                    <p>Company Address: </p>
+                                    <p></p>
+                                    <hr>
+                                    <p class="text-muted">Company Address: </p>
+                                    <p></p>
+                                    <hr>
                                     <p class="text-muted">Company Social Media: </p>
                                     <div class="social_link mt-2">
                                         <a title="facebook" href="" target="_blank" class=" waves-effect waves-block"> <i class="zmdi zmdi-facebook"></i></a>

@@ -139,7 +139,7 @@ p{
 .fw-normal{
     font-weight: normal;
 }
-#image_preview_container,#image_preview_containerlogo{
+#image_preview_container,#image_preview_containerlogo,.sidebar .user-info .image img{
     max-height: 120px !important;
     max-width: 120px !important;
     margin-bottom: 12px;
@@ -151,10 +151,12 @@ p{
     width: 180px;
     border: 3px solid #fff;
     box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
+    display: block;
 }
-#image_preview_containerlogo{
+#image_preview_containerlogo,.sidebar .user-info .image img{
     height: 120px !important;
     width: 120px !important;
+    display: block;
 }
 .author_info{
     font-size: 15px;
