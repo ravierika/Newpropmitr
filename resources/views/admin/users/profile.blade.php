@@ -158,19 +158,16 @@
                         <form class="d-none" id="profileInfoEdit" method="POST" enctype="multipart/form-data" id="update_user" action="javascript:void(0)" >
                             @csrf
                         <div class="tab-pane body active" id="about">
-                            <small class="text-muted">Email address: </small>
+                            <small class="text-muted my-2 d-block">Email address: </small>
                             <input type="email" name="email" value="{{$user->email}}" class="form-control" placeholder="Enter Your Email">
-                            <hr>
-                            <small class="text-muted">Age: </small>
+                            <small class="text-muted my-2 d-block">Age: </small>
                             <input type="number" name="age" value="{{$user->age}}" class="form-control" placeholder="Enter Your Email">
                             <p>{{Auth::user()->age}}</p>
-                            <hr>
-                            <small class="text-muted">Mobile: </small>
+                            <small class="text-muted my-2 d-block">Mobile: </small>
                             <input type="number" name="mobile" value="{{$user->mobile}}" class="form-control" placeholder="Enter Your Email">
                             <p>{{Auth::user()->mobile}}</p>
-                            <hr>
 
-                            <small class="text-muted">Role: </small>
+                            <small class="text-muted d-block my-2">Role: </small>
                             <p class="m-b-0">{{$role}}</p>
 
                         </div>

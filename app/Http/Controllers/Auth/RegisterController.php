@@ -69,17 +69,9 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         $users = User::all();
-        foreach ($users as $user) 
-                {
-                    $cityf[] = $user->id;
-                
-                }       
-                
-                $lastid = last($cityf);
-                $finalid = ($lastid + 1);
-                $superfinal = strval($finalid);
-                $myfinal = "000".$superfinal;
-               
+
+                $superfinal = '1';
+                $usersid = '1';
         {
             $user = User::create([
                 'name' => $data['name'],
@@ -87,7 +79,8 @@ class RegisterController extends Controller
                 'company' => $data['company'],
                 'companyinitials' => $data['companyinitials'],
                 'password' => Hash::make($data['password']),
-                'companyid' => $data['companyinitials'] . $myfinal,
+                'companyid' => $superfinal,
+                'userid' => $usersid,
             ]);
         }
 
@@ -97,5 +90,5 @@ class RegisterController extends Controller
 
     }
 
-    
+
 }

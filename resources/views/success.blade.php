@@ -21,19 +21,19 @@
 <body class="theme-purple authentication sidebar-collapse">
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg fixed-top navbar-transparent">
-    <div class="container">        
+    <div class="container">
         <div class="navbar-translate n_logo">
-           
+
         </div>
         <div class="navbar-collapse">
             <ul class="navbar-nav">
                 <li class="nav-item">
                 </li>
-                
+
                 <li class="nav-item">
-                    
+
                 </li>
-                
+
                 <li class="nav-item">
                 </li>
             </ul>
@@ -42,7 +42,7 @@
 </nav>
 <!-- End Navbar -->
 <div class="page-header">
-    <div class="page-header-image" style="background-image:url(../assets/images/login.jpg)"></div>
+    <div class="page-header-image" style="background-image:linear-gradient(rgba(0 ,0, 0 , 50%),rgba(0, 0, 0 , 58%)),url(../assets/images/login.jpg)"></div>
     <div class="container">
         <div class="col-md-12 content-center">
             <div class="card-plain">
@@ -54,7 +54,7 @@
                         <h5>Registration Successful</h5>
                         <span>You have successfully opened a key towards your Business Success</span>
                     </div>
-                    
+
                     <div class="footer text-center">
                         <a href="/dashboard" class="btn btn-primary btn-round btn-lg btn-block waves-effect waves-light">GO TO DASHBOARD</a>
                     </div>
@@ -71,20 +71,13 @@
                     <li><a href="javascript:void(0);">FAQ</a></li>
                 </ul>
             </nav>
-            <div class="copyright">
-                &copy;
-                <script>
-                    document.write(new Date().getFullYear())
-                </script>,
-                <span>Designed by <a href="http://thememakker.com/" target="_blank">ThemeMakker</a></span>
-            </div>
         </div>
     </footer>
 </div>
 
 <!-- Jquery Core Js -->
 <script src="assets/bundles/libscripts.bundle.js"></script>
-<script src="assets/bundles/vendorscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js --> 
+<script src="assets/bundles/vendorscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js -->
 <script>
    $(".navbar-toggler").on('click',function() {
     $("html").toggleClass("nav-open");

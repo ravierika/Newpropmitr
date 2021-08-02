@@ -158,6 +158,9 @@ p{
     width: 120px !important;
     display: block;
 }
+.sidebar .user-info .image img{
+    margin-bottom: 0;
+}
 .author_info{
     font-size: 15px;
     font-weight: 500;
@@ -175,4 +178,10 @@ p{
 }
 .icofont-company-icon i{
     font-size: 25px;
+}
+a.waves-effect.waves-block{
+    padding:10px !important;
+}
+.page-header-image{
+    background-image: linear-gradient(red,red), url('../images/login.jpg');
 }
