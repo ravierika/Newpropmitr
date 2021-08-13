@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-lg-5 col-md-5 col-sm-12">
                 <h2>Add Agent
-                <small>Welcome to {{$comp}}</small>
+                <small>Welcome to {{$compn}}</small>
                 </h2>
             </div>            
             <div class="col-lg-7 col-md-7 col-sm-12 text-md-right">
@@ -24,7 +24,7 @@
                     <i class="zmdi zmdi-plus"></i>
                 </button>
                 <ul class="breadcrumb float-md-right">
-                    <li class="breadcrumb-item"><a href="/dashboard"><i class="zmdi zmdi-home"></i> {{$comp}}</a></li>
+                    <li class="breadcrumb-item"><a href="/dashboard"><i class="zmdi zmdi-home"></i> {{$compn}}</a></li>
                     <li class="breadcrumb-item active">Add Agent</li>
                 </ul>
             </div>
@@ -43,90 +43,70 @@
                         <form class="form-horizontal" method="post" action="{{ route('users.update', $user->id) }}" files="true" enctype="multipart/form-data">
                             @method('PATCH') 
                             @csrf
-                        <div class="row clearfix">
-                            <div class="col-sm-4">
-                                <div class="form-group">
-                                    <input type="text" name="name" class="form-control" placeholder="Name" value="{{$user->name}}" required>
+                            <div class="row clearfix">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input id="name" type="text" name="name" class="form-control @error('name') is-invalid @enderror" placeholder="Name" required autocomplete="name" value="{{ $user->name }}">
+                                        @error('name')
+                                        <span class="invalid-feedback" role="alert" id="nameError">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror                                  
+                                    </div>
                                 </div>
+                                
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input id="mobile" type="text" name="mobile" class="form-control @error('mobile') is-invalid @enderror" placeholder="mobile" required autocomplete="mobile" value="{{$errors->any() ? old('mobile') : $user->mobile}}">
+                                        @error('mobile')
+                                        <span class="invalid-feedback" role="alert" id="mobileError">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror   
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input id="email" type="text" name="email" class="form-control @error('email') is-invalid @enderror" placeholder="email" required autocomplete="email" value="{{$errors->any() ? old('email') : $user->email }}">
+                                        @error('email')
+                                        <span class="invalid-feedback" role="alert" id="emailError">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror                                   
+                                    </div>
+                                </div>
+                                
+                                <div class="col-sm-6">
+                                    <select name="gender" class="form-control show-tick" value="{{ old('gender') }}">
+                                        <option value="">-- Gender --</option>
+                                        <option value="Male" @if ($user->gender == "Male") {{ 'selected' }} @endif>Male</option>
+                                        <option value="Female" @if ($user->gender == "Female") {{ 'selected' }} @endif>Female</option>
+                                    </select>
+                                </div>
+                                
                             </div>
+                            <h6 class="mt-4">Account Information</h6>
+                            <div class="row clearfix">
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <input type="text" name="company" class="form-control" readonly="" id="inputCompany" value="{{$compn}}">
+                                    </div>
+                                </div>
+    
+                                <div class="col-sm-6">
+                                    <select name="role_id" class="form-control show-tick @error('role_id') is-invalid @enderror" required autocomplete="role_id" value="{{ old('role_id') }}">
+                                        <option value="">-- Role --</option>
+                                        <option value="2" @if ($user->role_id == "2") {{ 'selected' }} @endif>User</option>
+                                        <option value="3" @if ($user->role_id == "3") {{ 'selected' }} @endif>Accountant</option>
+                                        <option value="1" @if ($user->role_id == "1") {{ 'selected' }} @endif>Administrator</option>
+                                    </select>
+                                    @error('email')
+                                        <span class="invalid-feedback" role="alert" id="role_idlError">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror   
+                                </div>
                             
-                            <div class="col-sm-4">
-                                <div class="form-group">
-                                    <input type="text" name="mobile" class="form-control" value="{{$user->mobile}}" placeholder="Phone No.">
-                                </div>
-                            </div>
-                            
-                            <div class="col-sm-3">
-                                <div class="form-group">
-                                    <input type="text" name="age" class="form-control" value="{{$user->age}}" placeholder="Age">
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <select name="gender" class="form-control show-tick">
-                                    <option value="">-- Gender --</option>
-                                    <option value="10">Male</option>
-                                    <option value="20">Female</option>
-                                </select>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="form-group">
-                                    <input type="email" name="email" value="{{$user->email}}" class="form-control" placeholder="Enter Your Email">
-                                </div>
-                            </div>
-                        </div>
-                        <h6 class="mt-4">Account Information</h6>
-                        <div class="row clearfix">
-                            <div class="col-md-3 col-sm-6">
-                                <div class="form-group">
-                                    <input type="text" name="company" class="form-control" readonly="" id="inputCompany" value="{{$comp}}">
-                                </div>
-                            </div>
-
-                            <div class="col-sm-3">
-                                <select name="role_id" class="form-control show-tick">
-                                    <option value="">-- Role --</option>
-                                    <option value="2" >User</option>
-                                    <option value="3" >Accountant</option>
-                                    <option value="1" >Administrator</option>
-                                </select>
-                            </div>
-                        
-                            <div class="col-md-3 col-sm-6">
-                                <div class="form-group">
-                                    <input type="password" name="password" class="form-control" placeholder="Password">
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <h6 class="mt-4">Social Information</h6>
-                        <div class="row clearfix">
-                            <div class="col-md-3 col-sm-6">
-                                <div class="form-group">
-                                    <input type="text" name="facebook" value="{{$user->facebook}}" class="form-control" placeholder="Facebook">
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6">
-                                <div class="form-group">
-                                    <input type="text" name="twitter" class="form-control" value="{{$user->twitter}}" placeholder="Twitter">
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6">
-                                <div class="form-group">
-                                    <input type="text" name="google" class="form-control" value="{{$user->google}}" placeholder="Google">
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6">
-                                <div class="form-group">
-                                    <input type="text" name="linkedin" class="form-control" value="{{$user->linkedin}}" placeholder="Linkdin">
-                                </div>
-                            </div>
-                            <div class="col-sm-8">
-                                <h6 class="mt-4">Upload Image</h6>
-
-                                <div class="form-group mb-0">
-                                    <input id="demo" type="file_id" name="files" accept=".jpg, .png, image/jpeg, image/png" multiple>
-                                </div>
-                            </div>
                             <div class="col-sm-12 mt-4">
                                 <button type="submit" class="btn btn-primary btn-round">Submit</button>
                             <a href="{{route('users.index')}}" class="btn btn-primary btn-round">Cancel</a>

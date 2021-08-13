@@ -13,6 +13,8 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\Role;
+use Illuminate\Validation\Rule;
+
 
 class AdminUsersController extends Controller
 {
@@ -24,18 +26,20 @@ class AdminUsersController extends Controller
     public function index()
     {
         //
-        $comp=Auth::user()->company;
+        $comp=Auth::user()->companyid;
+        $compn=Auth::user()->company;
         $name=Auth::user()->name;
         $role=Auth::user()->role->name;
         $facebook=Auth::user()->facebook;
         $twitter=Auth::user()->twitter;
         $insta=Auth::user()->insta;
         $linkedin=Auth::user()->linkedin;
-        $users = User::Where(function ($query) use($comp) {
-            $query->where('company', '=', $comp);
+        $users = User::Where(function ($query) use($comp, $name) {
+            $query->where('companyid', '=', $comp);
+            $query->where('name', '!=', $name);
         })->get();
         //return $users;
-        return view('admin.users.index', compact('users', 'comp', 'name', 'role', 'facebook', 'twitter', 'insta', 'linkedin'));
+        return view('admin.users.index', compact('users', 'compn', 'name', 'role', 'facebook', 'twitter', 'insta', 'linkedin'));
     }
 
     /**
@@ -46,14 +50,14 @@ class AdminUsersController extends Controller
     public function create()
     {
         //
-        $comp=Auth::user()->company;
+        $compn=Auth::user()->company;
         $name=Auth::user()->name;
         $role=Auth::user()->role->name;
         $facebook=Auth::user()->facebook;
         $twitter=Auth::user()->twitter;
         $insta=Auth::user()->insta;
         $linkedin=Auth::user()->linkedin;
-        return view('admin.users.create', compact('comp', 'name', 'role', 'facebook', 'twitter', 'insta', 'linkedin'));
+        return view('admin.users.create', compact('compn', 'name', 'role', 'facebook', 'twitter', 'insta', 'linkedin'));
     }
 
     /**
@@ -65,12 +69,35 @@ class AdminUsersController extends Controller
     public function store(Request $request)
     {
         //
-        $input = $request->all();
-        $file = "testing.25885";
-        $input['file_id'] = $file;
+        $validatedData = $request->validate([
+            'password' => ['required', 'string', 'min:8'],
+            'confirmpassword' => ['same:password'],
+            'name' => ['required'],
+            'mobile' => ['required', 'unique:users', 'digits:10'],
+            'email' => ['required', 'unique:users', 'regex:/(.+)@(.+)\.(.+)/i'],
 
-        $input['password'] = bcrypt($request->password);
+        ]);
+
         
+        $input = $request->all();
+        $comp=Auth::user()->companyid;
+        $users = User::Where(function ($query) use($comp) {
+            $query->where('companyid', '=', $comp);
+        })->get();
+        
+        foreach ($users as $user) 
+                {
+                    $cityf[] = $user->userid;
+                
+                }       
+                
+                $lastid = max($cityf);
+                $finalid = ($lastid + 1);
+                $superfinal = strval($finalid);
+ 
+        $cinitials = Auth::user()->companyinitials;      
+        $input['password'] = bcrypt($request->password);
+        $input['userid'] = $superfinal;
         User::create($input);
         return redirect('/admin/users')->with('success', 'User added successfully');
 
@@ -93,7 +120,7 @@ class AdminUsersController extends Controller
     public function edit($id)
     {
         //
-        $comp=Auth::user()->company;
+        $compn=Auth::user()->company;
 
         $user = User::findOrFail($id);
         $name=Auth::user()->name;
@@ -102,7 +129,7 @@ class AdminUsersController extends Controller
         $twitter=Auth::user()->twitter;
         $insta=Auth::user()->insta;
         $linkedin=Auth::user()->linkedin;
-        return view('admin.users.edit', compact('user', 'comp', 'name', 'role', 'facebook', 'twitter', 'insta', 'linkedin'));
+        return view('admin.users.edit', compact('user', 'compn', 'name', 'role', 'facebook', 'twitter', 'insta', 'linkedin'));
     }
 
     /**
@@ -116,6 +143,14 @@ class AdminUsersController extends Controller
     {
         //
         $user = User::findOrFail($id);
+
+        $validatedData = $request->validate([
+            'name' => ['required'],
+            'email' => ['required',Rule::unique('users')->ignore($user->id), 'regex:/(.+)@(.+)\.(.+)/i'],
+            'mobile' => ['required',Rule::unique('users')->ignore($user->id), 'digits:10'],
+        ]);
+
+
         $input = $request->all();
         if($file = $request->file('file_id')) {
 
@@ -127,7 +162,6 @@ class AdminUsersController extends Controller
 
             $input['file_id'] = $photo->id;
         }
-        $input['password'] = bcrypt($request->password);
         $user->update($input);
         
         return redirect('/admin/users');
@@ -154,7 +188,7 @@ class AdminUsersController extends Controller
     public function show($id)
     {
         //
-        $comp=Auth::User()->company;
+        $compn=Auth::User()->company;
         $name=Auth::User()->name;
         $role=Auth::User()->role->name;
         $facebook=Auth::user()->facebook;
@@ -164,7 +198,7 @@ class AdminUsersController extends Controller
 
         $user = User::findOrFail($id);
         
-        return view('admin.users.profile', compact('user', 'comp', 'name', 'role', 'facebook', 'twitter', 'insta', 'linkedin'));
+        return view('admin.users.profile', compact('user', 'compn', 'name', 'role', 'facebook', 'twitter', 'insta', 'linkedin'));
     }
     
 }

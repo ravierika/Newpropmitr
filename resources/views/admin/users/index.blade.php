@@ -6,25 +6,21 @@
     <div class="block-header">
         <div class="row">
             <div class="col-lg-5 col-md-5 col-sm-12">
-                <h2>Agent
-                <small>Welcome to {{$comp}}</small>
+                <h2>Agents
+                <small>Welcome to {{$compn}}</small>
                 </h2>
             </div>            
             <div class="col-lg-7 col-md-7 col-sm-12 text-md-right">
-                <div class="inlineblock text-center m-r-15 m-l-15 hidden-md-down">
-                    <div class="sparkline" data-type="bar" data-width="97%" data-height="25px" data-bar-Width="2" data-bar-Spacing="5" data-bar-Color="#fff">3,2,6,5,9,8,7,9,5,1,3,5,7,4,6</div>
-                    <small class="col-white">Visitors</small>
-                </div>
-                <div class="inlineblock text-center m-r-15 m-l-15 hidden-md-down">
-                    <div class="sparkline" data-type="bar" data-width="97%" data-height="25px" data-bar-Width="2" data-bar-Spacing="5" data-bar-Color="#fff">1,3,5,7,4,6,3,2,6,5,9,8,7,9,5</div>
-                    <small class="col-white">Bounce Rate</small>
-                </div>
-                <button class="btn btn-white btn-icon btn-round hidden-sm-down float-right ml-3" type="button">
-                    <i class="zmdi zmdi-plus"></i>
-                </button>
+                
+                <a href="" class="btn btn-white btn-icon btn-round hidden-sm-down float-right ml-3 delete-all" data-url="">
+                    <i class="zmdi zmdi-minus mt-2"></i>
+                </a>
+                <a href="/admin/users/create" class="btn btn-white btn-icon btn-round hidden-sm-down float-right ml-3" role="button">
+                    <i class="zmdi zmdi-plus mt-2"></i>
+                </a>
                 <ul class="breadcrumb float-md-right">
-                    <li class="breadcrumb-item"><a href="/dashbo"><i class="zmdi zmdi-home"></i> {{$comp}}</a></li>
-                    <li class="breadcrumb-item active">Agent</li>
+                    <li class="breadcrumb-item"><a href="/dashboard"><i class="zmdi zmdi-home"></i> {{$compn}}</a></li>
+                    <li class="breadcrumb-item active">Agents</li>
                 </ul>
             </div>
         </div>
@@ -34,26 +30,18 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="header">
-                        <h2><strong>{{$comp}}</strong> Agents </h2>
-                        
-                        <ul class="header-dropdown">
-                            <li class="add"> 
-                                <a href="/admin/users/create" class="btn btn-primary btn-sm"><i class="zmdi zmdi-plus mr-2"></i>Add User</a>
-                            </li>
-                            <li class="remove">
-                                <a href="" class="btn btn-primary btn-sm"><i class="zmdi zmdi-delete mr-2"></i>Delete</a>
-                            </li>
-                        </ul>
+                        <h2><strong>{{$compn}}</strong> Agents </h2>
                     </div>
                     <div class="body">
                         <table class="table table-bordered table-striped table-hover dataTable js-exportable">
                             <thead>
                                 <tr>
+                                    <th><input type="checkbox" id="check_all"></th>
                                     <th>User ID</th>
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>Mobile</th>
-                                    <th>City</th>
+                                    <th>Company ID</th>
                                     <th>Role</th>                                        
                                     <th>Deal</th>
                                     <th>Value</th>
@@ -61,12 +49,13 @@
                             </thead>
                             <tbody>
                                 @foreach($users as $user)  
-                                <tr>
-                                    <td>{{$user->id}}</td>
+                                <tr id="tr_{{$user->id}}">
+                                    <td><input type="checkbox" class="checkbox" data-id="{{$user->id}}"></td>
+                                    <td>{{$user->userid}}</td>
                                     <td><a href="{{route('users.edit', $user->id)}}"> {{$user->name}}</a></td>
                                     <td>{{$user->email}}</td>
                                     <td>{{$user->mobile}}</td>
-                                    <td>{{$user->city}}</td>
+                                    <td>{{$user->companyinitials}}000{{$user->companyid}}</td>
                                     <td>{{$user->role->name}}</td>
                                     <td>{{$user->deal}}</td>
                                     <td>{{$user->value}}</td>
@@ -93,6 +82,64 @@
 <script src="{{URL::asset('assets/plugins/jquery-datatable/buttons/buttons.html5.min.js')}}"></script>
 <script src="{{URL::asset('assets/plugins/jquery-datatable/buttons/buttons.print.min.js')}}"></script>
 
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#check_all').on('click', function(e) {
+         if($(this).is(':checked',true))  
+         {
+            $(".checkbox").prop('checked', true);  
+         } else {  
+            $(".checkbox").prop('checked',false);  
+         }  
+        });
+         $('.checkbox').on('click',function(){
+            if($('.checkbox:checked').length == $('.checkbox').length){
+                $('#check_all').prop('checked',true);
+            }else{
+                $('#check_all').prop('checked',false);
+            }
+         });
+        $('.delete-all').on('click', function(e) {
+            var idsArr = [];  
+            $(".checkbox:checked").each(function() {  
+                idsArr.push($(this).attr('data-id'));
+            });  
+            if(idsArr.length <=0)  
+            {  
+                alert("Please select atleast one record to delete.");  
+            }  else {  
+                if(confirm("Are you sure, you want to delete the selected Agents?")){  
+                    var strIds = idsArr.join(","); 
+                    $.ajax({
+                        url: "{{ route('product.multiple-delete') }}",
+                        type: 'DELETE',
+                        headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                        data: 'ids='+strIds,
+                        success: function (data) {
+                            if (data['status']==true) {
+                                $(".checkbox:checked").each(function() {  
+                                    $(this).parents("tr").remove();
+                                });
+                            } else {
+                                alert('Whoops Something went wrong!!');
+                            }
+                        },
+                        error: function (data) {
+                            alert(data.responseText);
+                        }
+                    });
+                }  
+            }  
+        });
+        $('[data-toggle=confirmation]').confirmation({
+            rootSelector: '[data-toggle=confirmation]',
+            onConfirm: function (event, element) {
+                element.closest('form').submit();
+            }
+        });   
+    
+    });
+</script>
 
 @endsection
 

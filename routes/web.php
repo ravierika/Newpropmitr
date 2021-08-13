@@ -41,6 +41,8 @@ Route::post('save-photo', 'UploadController@save')->name('save.photo');
 Route::post('save-logo', 'UploadController@savelogo')->name('save.logo');
 Route::post('user-update/{user}', 'UploadController@userupdate')->name('user.update');
 Route::post('user-update-password/{user}', 'UploadController@userupdatepassword')->name('user.update.password');
+Route::delete('agent/{id}', ['as'=>'product.destroy','uses'=>'UploadController@destroy']);
+Route::delete('delete-multiple-product', ['as'=>'product.multiple-delete','uses'=>'UploadController@deleteMultiple']);
 
 Route::group(['middleware'=>'admin'], function(){
 

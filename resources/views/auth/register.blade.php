@@ -65,6 +65,7 @@
                         @csrf
                         <input type="hidden"  name="companyid">
                         <input type="hidden"  id="companyinit" name="companyinitials">
+                        <input type="hidden"  id="userid" name="userid">
 
                         <div class="input-group">
                             <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" placeholder="User Name" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>

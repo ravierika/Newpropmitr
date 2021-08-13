@@ -90,14 +90,25 @@ class UploadController extends Controller
                 }
             }]
         ]);
-        $user = User::findOrFail($id);
-        $input = $request->all();
-        $input['password'] = bcrypt($request->password);
-        $user->update($input);
-        return Response()->json([
-            "success" => true,
-        ]);        
-    
+        if($validatedData){
+            $user = User::findOrFail($id);
+            $input = $request->all();
+            $input['password'] = bcrypt($request->password);
+            $user->update($input);
+            return Response()->json([
+                "success" => true,
+            ]);        
+        
+        }
+        return response()->json(['error'=>$validator->errors()->all()]);
+
+
+    }
+
+    public function deleteMultiple(Request $request){
+        $ids = $request->ids;
+        User::whereIn('id',explode(",",$ids))->delete();
+        return response()->json(['status'=>true,'message'=>"Product deleted successfully."]);
         
     }
 }

@@ -22,7 +22,7 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $comp=Auth::User()->company;
+        $compn=Auth::User()->company;
         $name=Auth::User()->name;
         $role=Auth::User()->role->name;
         $facebook=Auth::user()->facebook;
@@ -30,7 +30,7 @@ class DashboardController extends Controller
         $insta=Auth::user()->insta;
         $linkedin=Auth::user()->linkedin;
         $image=Auth::user()->file;
-        return view('dashboard', compact('image', 'comp', 'name', 'role', 'facebook', 'twitter', 'insta', 'linkedin'));
+        return view('dashboard', compact('image', 'compn', 'name', 'role', 'facebook', 'twitter', 'insta', 'linkedin'));
         
     
     }

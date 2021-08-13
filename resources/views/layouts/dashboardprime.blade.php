@@ -77,7 +77,7 @@
         <li>
             <div class="navbar-header">
                 <a href="javascript:void(0);" class="bars"></a>
-                <a class="navbar-brand" href="/dashboard"><img src="{{URL::asset('assets/images/logo.svg')}}" width="30" alt="Oreo"><span class="m-l-10">{{$comp}}</span></a>
+                <a class="navbar-brand" href="/dashboard"><img src="{{URL::asset('assets/images/logo.svg')}}" width="30" alt="Oreo"><span class="m-l-10">{{$compn}}</span></a>
             </div>
         </li>
         <li><a href="javascript:void(0);" class="ls-toggle-btn" data-close="true"><i class="zmdi zmdi-swap"></i></a></li>
@@ -168,7 +168,7 @@
 <!-- Left Sidebar -->
 <aside id="leftsidebar" class="sidebar">
     <ul class="nav nav-tabs ml-4">
-        <!--<li class="nav-item"><a class="nav-link active" data-toggle="tab" href="/dashboard"><i class="zmdi zmdi-home m-r-5"></i>{{$comp}}</a></li>-->
+        <!--<li class="nav-item"><a class="nav-link active" data-toggle="tab" href="/dashboard"><i class="zmdi zmdi-home m-r-5"></i>{{$compn}}</a></li>-->
         <!--<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#user"><i class="zmdi zmdi-account m-r-5"></i>Agent</a></li>-->
     </ul>
     <div class="tab-content">
@@ -343,7 +343,7 @@
                             <div class="image"><a href="profile.html"><img src="../assets/images/profile_av.jpg" alt="User"></a></div>
                             <div class="detail">
                                 <h4>Michael</h4>
-                                <small>Agent</small>
+                                <small>Agents</small>
                             </div>
                             <a title="facebook" href="javascript:void(0);"><i class="zmdi zmdi-facebook"></i></a>
                             <a title="twitter" href="javascript:void(0);"><i class="zmdi zmdi-twitter"></i></a>
@@ -803,7 +803,7 @@
     <div class="card">
         <div class="header">
             <ul class="list-unstyled team-info margin-0">
-                <li class="m-r-15"><h2>Agent Team</h2></li>
+                <li class="m-r-15"><h2>Agents Team</h2></li>
                 <li><img src="../assets/images/xs/avatar2.jpg" alt="Avatar"></li>
                 <li><img src="../assets/images/xs/avatar3.jpg" alt="Avatar"></li>
                 <li><img src="../assets/images/xs/avatar4.jpg" alt="Avatar"></li>

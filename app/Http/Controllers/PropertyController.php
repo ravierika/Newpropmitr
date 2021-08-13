@@ -23,35 +23,37 @@ class PropertyController extends Controller
     public function index()
     {
         //
-        $comp = Auth::user()->company;
+        $comp=Auth::user()->companyid;
+        $compn=Auth::user()->company;
         $name=Auth::user()->name;
         $role=Auth::user()->role->name;
         $facebook=Auth::user()->facebook;
         $twitter=Auth::user()->twitter;
         $insta=Auth::user()->insta;
         $linkedin=Auth::user()->linkedin;
-        $properties = Property::Where(function ($query) use($comp) {
-            $query->where('company', '=', $comp);
+        $properties = Property::Where(function ($query) use($compn) {
+            $query->where('company', '=', $compn);
         })->get();
-        return view('property.index', compact('comp', 'name', 'role', 'facebook', 'twitter', 'insta', 'linkedin', 'properties'));
+        return view('property.index', compact('comp', 'compn', 'name', 'role', 'facebook', 'twitter', 'insta', 'linkedin', 'properties'));
 
     }
 
     public function indexlist()
     {
         //
-        $comp = Auth::user()->company;
+        $comp=Auth::user()->companyid;
+        $compn=Auth::user()->company;
         $name=Auth::user()->name;
         $role=Auth::user()->role->name;
         $facebook=Auth::user()->facebook;
         $twitter=Auth::user()->twitter;
         $insta=Auth::user()->insta;
         $linkedin=Auth::user()->linkedin;
-        $properties = Property::Where(function ($query) use($comp) {
-            $query->where('company', '=', $comp);
+        $properties = Property::Where(function ($query) use($compn) {
+            $query->where('company', '=', $compn);
         })->paginate(2);
         
-        return view('property.indexlist', compact('comp', 'name', 'role', 'facebook', 'twitter', 'insta', 'linkedin', 'properties'));
+        return view('property.indexlist', compact('comp', 'compn', 'name', 'role', 'facebook', 'twitter', 'insta', 'linkedin', 'properties'));
 
     }
 
@@ -63,6 +65,8 @@ class PropertyController extends Controller
     public function create()
     {
         //
+        $comp=Auth::user()->companyid;
+        $compn=Auth::user()->company;
         $comp = Auth::user()->company;
         $name=Auth::user()->name;
         $role=Auth::user()->role->name;
@@ -84,7 +88,7 @@ class PropertyController extends Controller
                 
                 }
                 $localff = json_encode($localf);
-        return view('property.create', compact('comp', 'name', 'role', 'facebook', 'twitter', 'insta', 'linkedin', 'localff', 'cityff'));
+        return view('property.create', compact('comp', 'compn', 'name', 'role', 'facebook', 'twitter', 'insta', 'linkedin', 'localff', 'cityff'));
     }
 
     /**

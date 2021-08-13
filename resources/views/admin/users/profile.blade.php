@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-lg-7 col-md-6 col-sm-12">
                 <h2>Agent Profile
-                <small>Welcome to {{$comp}}</small>
+                <small>Welcome to {{$compn}}</small>
                 </h2>
             </div>
             <div class="col-lg-5 col-md-6 col-sm-12">                
@@ -15,7 +15,7 @@
                     <i class="zmdi zmdi-plus"></i>
                 </button>
                 <ul class="breadcrumb float-md-right">
-                    <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> {{$comp}}</a></li>
+                    <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> {{$compn}}</a></li>
                     <li class="breadcrumb-item active">Profile</li>
                 </ul>                
             </div>
@@ -45,7 +45,7 @@
                                 <div class="row">
                                     <div class="col-md-12 mb-2">
                                         <div class="profile-image float-md-left ml-2"> <img id="image_preview_container" src="{{ asset('storage/profileimages/' .$user->file) }}"
-                                            alt="preview image" style="max-height: 90px; max-width: 90px;" >
+                                            alt="preview image" style="max-height: 120px; max-width: 120px;" >
                                         </div>    
                                     </div>
                                     <div class="col-md-12">
@@ -76,7 +76,7 @@
                                 @if(empty($user->companylogo))
                                 <div class="row">
                                     <div class="col-md-12 mb-2">
-                                        <div class="profile-image float-md-left ml-2"> <img id="image_preview_containerlogo" src="{{ asset('storage/logoimages/logo.png') }}"
+                                        <div class="float-md-left ml-2"> <img id="image_preview_containerlogo" src="{{ asset('storage/logoimages/logo.png') }}"
                                             alt="preview image" style="height: 90px; width: 95px;" >
                                         </div>    
                                     </div>
@@ -89,7 +89,7 @@
                                 @else    
                                 <div class="row">
                                     <div class="col-md-12 mb-2">
-                                        <div class="profile-image float-md-left ml-2 "> <img id="image_preview_containerlogo" src="{{ asset('storage/logoimages/' .$user->companylogo) }}"
+                                        <div class="float-md-left ml-2 "> <img id="image_preview_containerlogo" src="{{ asset('storage/logoimages/' .$user->companylogo) }}"
                                             alt="preview image" style="height: 90px; width: 95px;" >
                                         </div>    
                                     </div>
@@ -125,14 +125,12 @@
                             @csrf
                         <div class="tab-pane body active" id="about">
                             <small class="text-muted">Email address: </small>
-                            <input type="email" name="email" value="{{$user->email}}" class="form-control" placeholder="Enter Your Email">
+                            <p>{{Auth::user()->email}}</p>    
                             <hr>
                             <small class="text-muted">Age: </small>
-                            <input type="number" name="age" value="{{$user->age}}" class="form-control" placeholder="Enter Your Email">
                             <p>{{Auth::user()->age}}</p>
                             <hr>
                             <small class="text-muted">Mobile: </small>
-                            <input type="number" name="mobile" value="{{$user->mobile}}" class="form-control" placeholder="Enter Your Email">
                             <p>{{Auth::user()->mobile}}</p>
                             <hr>
                             
@@ -159,7 +157,7 @@
                                 <div class="form-group">
                                     <input id="currentpassword" type="password" name="currentpassword" class="form-control @error('currentpassword') is-invalid @enderror" placeholder="Current Password" required autocomplete="currentpassword">
                                     @error('currentpassword')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback" role="alert" id="currentpasswordError">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                     @enderror  
@@ -169,7 +167,7 @@
                                     <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password" name="password" required autocomplete="password">
 
                                     @error('password')
-                                        <span class="invalid-feedback" role="alert">
+                                        <span class="invalid-feedback" role="alert" id="passwordError">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror                                        
@@ -177,7 +175,7 @@
                                 <div class="form-group">
                                     <input id="confirmpassword" type="password" class="form-control @error('confirmpassword') is-invalid @enderror" placeholder="Confirm Password" name="confirmpassword" required autocomplete="confirmpassword">    
                                     @error('confirmpassword')
-                                        <span class="invalid-feedback" role="alert">
+                                        <span class="invalid-feedback" role="alert" id="confirmpasswordError">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror                                 
@@ -188,7 +186,7 @@
                         </div>
                         <div class="card">
                             <div class="header">
-                                <h2><strong>Account</strong> Settings</h2>
+                                <h2><strong>Company</strong>Information</h2>
                             </div>
                             <div class="body">
                                 <div class="row clearfix">
@@ -222,20 +220,7 @@
                                             <textarea rows="4" class="form-control no-resize" placeholder="Address Line 1"></textarea>
                                         </div>
                                     </div>
-                                    <div class="col-md-12">
-                                        <div class="checkbox">
-                                            <input id="procheck1" type="checkbox">
-                                            <label for="procheck1">Profile Visibility For Everyone</label>
-                                        </div>
-                                        <div class="checkbox">
-                                            <input id="procheck2" type="checkbox">
-                                            <label for="procheck2">New task notifications</label>
-                                        </div>
-                                        <div class="checkbox">
-                                            <input id="procheck3" type="checkbox">
-                                            <label for="procheck3">New friend request notifications</label>
-                                        </div>
-                                    </div>
+                                    
                                     <div class="col-md-12">
                                         <button class="btn btn-primary btn-round">Save Changes</button>
                                     </div>
@@ -290,49 +275,46 @@
                 }
             });
         });
-    });
-
-    $(document).ready(function (e) {
-  
-  $.ajaxSetup({
-      headers: {
-          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-      }
-  });
-
-  $('#imagelogo').change(function(){
+        $('#imagelogo').change(function(){
     
-      let reader = new FileReader();
-      reader.onload = (e) => { 
-        $('#image_preview_containerlogo').attr('src', e.target.result); 
-      }
-      reader.readAsDataURL(this.files[0]); 
+    let reader = new FileReader();
+    reader.onload = (e) => { 
+      $('#image_preview_containerlogo').attr('src', e.target.result); 
+    }
+    reader.readAsDataURL(this.files[0]); 
 
-  });
-
-  $('#upload_image_formlogo').submit(function(e) {
-      e.preventDefault();
-
-      var formData = new FormData(this);
-
-      $.ajax({
-          type:'POST',
-          url: "{{ route("save.logo") }}",
-          data: formData,
-          cache:false,
-          contentType: false,
-          processData: false,
-          success: (data) => {
-              this.reset();
-              location.reload();
-          },
-          error: function(data){
-              console.log(data);
-          }
-      });
-  });
 });
 
+$.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+$('#upload_image_formlogo').submit(function(e) {
+    e.preventDefault();
+
+    var formData = new FormData(this);
+
+    $.ajax({
+        type:'POST',
+        url: "{{ route("save.logo") }}",
+        data: formData,
+        cache:false,
+        contentType: false,
+        processData: false,
+        success: (data) => {
+            this.reset();
+            location.reload();
+        },
+        error: function(data){
+            console.log(data);
+        }
+    });
+});
+    });
+
+   
 $(document).ready(function (e) {
   
   $.ajaxSetup({
@@ -382,6 +364,8 @@ $(document).ready(function (e) {
           },
           error: function(data){
               console.log(data);
+              var response = JSON.parse(data.responseText);
+              console.log(response);
           }
       });
   });

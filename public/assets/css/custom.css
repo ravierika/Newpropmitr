@@ -1,5 +1,4 @@
-
-html {
+html{
     scroll-behavior: smooth;
 }
 a{text-decoration: none;}
@@ -8,12 +7,7 @@ a{text-decoration: none;}
 }
 .price{
     font-size: 23px;
-    /* font-weight: bold; */
-}
-.small_detail{
-    padding: 5px;
-    background:#e8e6df;
-    border-radius: 5px;
+    font-weight: bold;
 }
 .small {
     font-size: 13px;
@@ -66,9 +60,54 @@ a{text-decoration: none;}
     color: #007bff;
     font-weight: 500;
 }
-.read_more_btn::after{
+/* .read_more_btn::after{
     content: "...";
+} */
+ul#ui-id-2,ul#ui-id-1{
+    border-radius: 15px;
 }
+.bootstrap-select .dropdown-menu li.selected{
+    position: relative;
+    padding-left: 20px;
+    background-color: #eee !important;
+}
+.bootstrap-select .dropdown-menu li.selected .dropdownOption{
+    padding-left: 15px;
+}
+.bootstrap-select .dropdown-menu li .dropdownOption{
+    padding-left: 30px;
+}
+.bootstrap-select .dropdown-menu li .dropdownOption::after{
+    position: absolute;
+    content: "☐";
+    width: 10px;
+    height: 10px;
+    top:33%;
+    left:10px;
+    transform: translateY(-50%);
+}
+.bootstrap-select .dropdown-menu li.selected .dropdownOption::after{
+    position: absolute;
+    content: "✅";
+    width: 10px;
+    height: 10px;
+    top:33%;
+    left:10px;
+    transform: translateY(-50%);
+}
+.red{
+    color: red;
+    /* font-size: 20px; */
+    margin-right: 5px;
+    font-weight: 800;
+}
+.passError{
+    font-weight: normal;
+}
+.sp-2{
+    padding: 12px !important;
+}
+
 #more1 {display: none;}
 #more2 {display: none;}
 #more3 {display: none;}
@@ -77,13 +116,14 @@ a{text-decoration: none;}
 #more6 {display: none;}
 #more7 {display: none;}
 
+
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link ,.nav-pills .nav-link:hover{
     color: #7e6990;
     background-color: transparent;
     border-radius: 0;
 }
 .hover{
-    
+
     font-weight: 600;
 }
 .hover:hover{
@@ -98,4 +138,50 @@ p{
 }
 .fw-normal{
     font-weight: normal;
+}
+#image_preview_container,#image_preview_containerlogo,.sidebar .user-info .image img{
+    max-height: 120px !important;
+    max-width: 120px !important;
+    margin-bottom: 12px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+    width: 180px;
+    border: 3px solid #fff;
+    box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
+    display: block;
+}
+#image_preview_containerlogo,.sidebar .user-info .image img{
+    height: 120px !important;
+    width: 120px !important;
+    display: block;
+}
+.sidebar .user-info .image img{
+    margin-bottom: 0;
+}
+.author_info{
+    font-size: 15px;
+    font-weight: 500;
+}
+.social_link{
+    margin-top: 30px;
+    display:flex;
+}
+.social_link i{
+    font-size: 20px;
+    margin: 0 10px;
+}
+#image,#imagelogo{
+    margin-left: 18px !important;
+}
+.icofont-company-icon i{
+    font-size: 25px;
+}
+a.waves-effect.waves-block{
+    padding:10px !important;
+}
+.page-header-image{
+    background-image: linear-gradient(red,red), url('../images/login.jpg');
 }

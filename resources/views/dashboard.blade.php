@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-lg-5 col-md-5 col-sm-12">
                 <h2>Dashboard
-                <small>Welcome to {{$comp}}</small>
+                <small>Welcome to {{$compn}}</small>
                 </h2>
             </div>            
             <div class="col-lg-7 col-md-7 col-sm-12 text-md-right">
@@ -25,7 +25,7 @@
                     <i class="zmdi zmdi-plus"></i>
                 </button>
                 <ul class="breadcrumb float-md-right">
-                    <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> {{$comp}}</a></li>
+                    <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> {{$compn}}</a></li>
                     <li class="breadcrumb-item active">Dashboard</li>
                 </ul>
             </div>
