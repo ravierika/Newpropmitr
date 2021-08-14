@@ -21,20 +21,20 @@
 <body class="theme-purple authentication sidebar-collapse">
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg fixed-top navbar-transparent">
-    <div class="container">        
+    <div class="container">
         <div class="navbar-translate n_logo">
-            
+
         </div>
         <div class="navbar-collapse">
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="/">Home</a>
                 </li>
-                
+
                 <li class="nav-item">
-                    
+
                 </li>
-                
+
                 <li class="nav-item">
                     <a class="nav-link btn btn-white btn-round" href="/register">SIGN UP</a>
                 </li>
@@ -54,19 +54,19 @@
                         </div>
                         <h5>Reset Password</h5>
                     </div>
-                    <div class="content">     
+                    <div class="content">
                         <form method="POST" action="{{ route('password.update') }}">
                             @csrf
-    
+
                          <input type="hidden" name="token" value="{{ $token }}">
-                                                                 
+
                                 <div class="input-group">
                                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $email ?? old('email') }}" required autocomplete="email" autofocus>
                                         @error('email')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
-                                        @enderror                     
+                                        @enderror
                                     <span class="input-group-addon">
                                         <i class="zmdi zmdi-account-circle"></i>
                                     </span>
@@ -78,7 +78,7 @@
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
-                                        @enderror                          
+                                        @enderror
                                     <span class="input-group-addon">
                                         <i class="zmdi zmdi-lock"></i>
                                     </span>
@@ -86,12 +86,12 @@
                                 <div class="input-group">
                                     <input id="password-confirm" type="password" class="form-control" placeholder="Renter Password" name="password_confirmation" required autocomplete="new-password">
 
-                                                           
+
                                     <span class="input-group-addon">
                                         <i class="zmdi zmdi-lock"></i>
                                     </span>
                                 </div>
-                            
+
                             <div class="footer text-center">
                                 <button type="submit"class="btn btn-primary btn-round btn-lg btn-block ">Submit</button>
                             </div>
@@ -100,16 +100,7 @@
         </div>
     </div>
     <footer class="footer">
-        <div class="container">
-            
-            <div class="copyright">
-                &copy;
-                <script>
-                    document.write(new Date().getFullYear())
-                </script>,
-                <span>Designed by <a href="http://thememakker.com/" target="_blank">ThemeMakker</a></span>
-            </div>
-        </div>
+        {{-- footer --}}
     </footer>
 </div>
 

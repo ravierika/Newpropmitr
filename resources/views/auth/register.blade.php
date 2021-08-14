@@ -21,7 +21,7 @@
 <body class="theme-purple authentication sidebar-collapse">
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg fixed-top navbar-transparent">
-    <div class="container">        
+    <div class="container">
         <div class="navbar-translate n_logo">
             <button class="navbar-toggler" type="button">
                 <span class="navbar-toggler-bar bar1"></span>
@@ -34,12 +34,12 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/">Home</a>
                 </li>
-                
+
                 <li class="nav-item">
-                        
-                    
+
+
                 </li>
-                
+
                 <li class="nav-item">
                     <a class="nav-link btn btn-white btn-round" href="/login">SIGN IN</a>
                 </li>
@@ -53,7 +53,7 @@
     <div class="container">
         <div class="col-md-12 content-center">
             <div class="card-plain">
-                
+
                     <div class="header">
                         <div class="logo-container">
                             <img src="../assets/images/logo.svg" alt="">
@@ -97,7 +97,7 @@
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror                            
+                                @enderror
                             <span class="input-group-addon">
                                 <i class="zmdi zmdi-home"></i>
                             </span>
@@ -109,18 +109,18 @@
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
-                            @enderror                            
+                            @enderror
                             <span class="input-group-addon">
                                 <i class="zmdi zmdi-lock"></i>
                             </span>
-                        </div>   
+                        </div>
                         <div class="input-group">
-                            <input id="password-confirm" type="password" class="form-control" placeholder="Confirm Password" name="password_confirmation" required autocomplete="new-password">    
+                            <input id="password-confirm" type="password" class="form-control" placeholder="Confirm Password" name="password_confirmation" required autocomplete="new-password">
                             <span class="input-group-addon">
                                 <i class="zmdi zmdi-lock"></i>
                             </span>
-                        </div>                           
-                    
+                        </div>
+
                     <div class="checkbox">
                             <input id="terms" type="checkbox"required>
                             <label for="terms">
@@ -128,39 +128,28 @@
                             </label>
                     </div>
                     <div class="footer text-center">
-                        <button type="submit" onclick="getInputValue();" class="btn btn-primary btn-round btn-lg btn-block waves-effect waves-light">SIGN UP  
-                        </button>                        
+                        <button type="submit" onclick="getInputValue();" class="btn btn-primary btn-round btn-lg btn-block waves-effect waves-light">SIGN UP
+                        </button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
     <footer class="footer">
-        <div class="container">
-            <nav>
-                
-            </nav>
-            <div class="copyright">
-                &copy;
-                <script>
-                    document.write(new Date().getFullYear())
-                </script>,
-                <span>Designed by <a href="http://thememakker.com/" target="_blank">ThemeMakker</a></span>
-            </div>
-        </div>
+        {{-- footer --}}
     </footer>
 </div>
 
 <!-- Jquery Core Js -->
 <script src="assets/bundles/libscripts.bundle.js"></script>
-<script src="assets/bundles/vendorscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js --> 
+<script src="assets/bundles/vendorscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js -->
 <script>
    $(".navbar-toggler").on('click',function() {
     $("html").toggleClass("nav-open");
 });
 
 function getInputValue(){
-            // Selecting the input element and get its value 
+            // Selecting the input element and get its value
             var inputVal = document.getElementById("company").value;
             var inputId = document.getElementById("company").value;
 

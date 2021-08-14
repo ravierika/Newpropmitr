@@ -21,9 +21,9 @@
 <body class="theme-purple authentication sidebar-collapse">
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg fixed-top navbar-transparent">
-    <div class="container">        
+    <div class="container">
         <div class="navbar-translate n_logo">
-            
+
         </div>
         <div class="navbar-collapse">
             <ul class="navbar-nav">
@@ -32,7 +32,7 @@
                 </li>
                 <li class="nav-item">
                 </li>
-                
+
                 <li class="nav-item">
                     <a class="nav-link btn btn-white btn-round" href="/login">SIGN IN</a>
                 </li>
@@ -68,7 +68,7 @@
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
-                            @enderror                            
+                            @enderror
                             <span class="input-group-addon">
                                 <i class="zmdi zmdi-email"></i>
                             </span>
@@ -83,22 +83,13 @@
         </div>
     </div>
     <footer class="footer">
-        <div class="container">
-            
-            <div class="copyright">
-                &copy;
-                <script>
-                    document.write(new Date().getFullYear())
-                </script>,
-                <span>Designed by <a href="http://thememakker.com/" target="_blank">ThemeMakker</a></span>
-            </div>
-        </div>
+        {{-- footer --}}
     </footer>
 </div>
 
 <!-- Jquery Core Js -->
 <script src="../assets/bundles/libscripts.bundle.js"></script>
-<script src="../assets/bundles/vendorscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js --> 
+<script src="../assets/bundles/vendorscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js -->
 <script>
    $(".navbar-toggler").on('click',function() {
     $("html").toggleClass("nav-open");
