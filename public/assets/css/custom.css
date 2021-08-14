@@ -315,5 +315,7 @@ h6, .h6{
 
 
 .checkbox label::after{
-    color: #f00;
+    color: #9b6fc1;
+    font-weight: 900;
+    font-size: 17px;
 }

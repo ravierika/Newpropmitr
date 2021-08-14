@@ -76,7 +76,7 @@
                     </div>
                     <div class="footer text-center">
                         <button type="submit" class="btn btn-primary btn-round btn-lg btn-block waves-effect waves-light">Send</button>
-                        <h5><a href="javascript:void(0);" class="link">Need Help?</a></h5>
+                        <h5><a href="/#contact" class="link">Need Help?</a></h5>
                     </div>
                 </form>
             </div>
