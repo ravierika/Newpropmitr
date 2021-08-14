@@ -1,3 +1,5 @@
+const { cleanData } = require("jquery");
+
 function myFunction(id) {
     const dots = document.getElementById(`dots${id}`);
     const moreText = document.getElementById(`more${id}`);
@@ -21,3 +23,16 @@ function infoToggle(id,infoId){
     info.classList.toggle('d-none');
     infoIdFixed.classList.toggle('d-none')
 }
+
+function buttonToggle(){
+    const dot = document.getElementById('dot');
+    dot.classList.toggle('active')
+}
+
+function filterToggle(id,icon){
+    const element = document.getElementById(id);
+    const iconElement = document.getElementById(icon);
+    element.classList.toggle('active')
+    iconElement.classList.toggle('active')
+}
+

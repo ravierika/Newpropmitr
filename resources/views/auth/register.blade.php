@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/authentication.css">
     <link rel="stylesheet" href="assets/css/color_skins.css">
+
+    <link rel="stylesheet" href="assets/css/custom.css">
+
 </head>
 
 <body class="theme-purple authentication sidebar-collapse">
@@ -49,7 +52,7 @@
 </nav>
 <!-- End Navbar -->
 <div class="page-header">
-    <div class="page-header-image" style="background-image:url(../assets/images/login.jpg)"></div>
+    <div class="page-header-image" style="background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/images/login.jpg)"></div>
     <div class="container">
         <div class="col-md-12 content-center">
             <div class="card-plain">

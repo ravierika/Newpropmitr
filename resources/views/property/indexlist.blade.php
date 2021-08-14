@@ -1,4 +1,4 @@
-@extends('layouts.dashboardprime')
+@extends('layouts.propertyFilter')
 
 @section('content')
 <section class="content">
@@ -60,7 +60,7 @@
       </div>
     </div>
     <div class="container-fluid">
-        @foreach($properties as $property)   
+        @foreach($properties as $property)
       <div class="row clearfix">
         <div class="col-lg-10 col-md-10">
           <div class="card">
@@ -82,7 +82,7 @@
                         class="card-img"
                         alt=""
                         />
-                    </div>    
+                    </div>
                 @else
                 <div class="card-img-wrap w-md-25">
                     <img
@@ -90,20 +90,20 @@
                     class="card-img"
                     alt=""
                     />
-                </div>    
-                @endif    
+                </div>
+                @endif
               <div class="card-body w-md-75">
                 <div class="card-text-top">
                   <div class="d-flex justify-content-between align-items-center">
                     <p class="mb-1 fw-bold">
-                      ₹ {{$property->expectedPrice}} {{$property->prange}}                   
+                      ₹ {{$property->expectedPrice}} {{$property->prange}}
                     </p>
                   </div>
                   <div class="d-flex justify-content-between align-items-center">
                     <p class="mb-3 fw-bold">
-                      {{$property->bedrooms}} BHK {{$property->type}} for {{$property->for}} in {{$property->locality}},  {{$property->city}}                   
+                      {{$property->bedrooms}} BHK {{$property->type}} for {{$property->for}} in {{$property->locality}},  {{$property->city}}
                     </p>
-                    
+
                     <a href="{{route('properties.show', $property->id)}}" class="stretched-link"></a>
 
                   </div>
@@ -139,7 +139,7 @@
                   @else
                     {{$property->description}}
                   @endif
-                  
+
               </div>
             </div>
 
@@ -156,13 +156,13 @@
           </div>
           </div>
         </div>
-        
+
       </div>
       @endforeach
       {{ $properties->links() }}
     </div>
 
-    
+
   </section>
 
 @section('scripts')
@@ -178,7 +178,7 @@
       src="https://kit.fontawesome.com/4b5d72e539.js"
       crossorigin="anonymous"
     ></script>
-  
+
 
 @endsection
 
