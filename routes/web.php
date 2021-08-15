@@ -17,6 +17,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/terms', function () {
+    return view('termsAndCondition');
+});
+
+
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
 

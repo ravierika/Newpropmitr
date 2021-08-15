@@ -231,7 +231,7 @@ a.waves-effect.waves-block{
     transition: .3s;
     cursor: pointer;
 }
-.wrap:hover{
+.wrap:hover,.wrap.active{
     background-color:rgba(0, 0, 0, 0.137);
 }
 .wrap p{
@@ -319,3 +319,12 @@ h6, .h6{
     font-weight: 900;
     font-size: 17px;
 }
+.moreBtn{
+    background: transparent;
+    border: none;
+    outline: none;
+    color:#0078DB;
+    cursor: pointer;
+    font-weight:600
+}
+

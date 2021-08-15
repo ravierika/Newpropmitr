@@ -247,11 +247,13 @@
                             </div>
                         </div>
                     </div>
+                    <button id="button1" class="moreBtn" onclick="propertyTagToggle('button1','filterData1')">+5 More</button>
+                    <div id="filterData1" class="d-none">
                     <div class="row my-3">
                         <div class="col-4 px-1">
                             <div class="wrap d-flex align-items-center justify-content-center">
                                 <i class="fas fa-plus"></i>
-                                <p>61BHK</p>
+                                <p>6BHK</p>
                             </div>
                         </div>
                         <div class="col-4 px-1">
@@ -282,9 +284,10 @@
                         </div>
                     </div>
                 </div>
+                </div>
                </div>
 <hr>
-               <div class="propertyType">
+               <div class="propertyType" id="propertyType">
                 <div onclick="filterToggle('propertyContent','icon3')" class="my-3 cursor-pointer">
                     <div class="d-flex justify-content-between align-items-center">
                         <h6 class="m-0">Property Type</h6>
@@ -292,33 +295,36 @@
                     </div>
                 </div>
                 <div id="propertyContent">
-                    <div class="wrap d-flex align-items-center my-2">
+                    <div id="true" class="wrap d-flex align-items-center my-2">
                         <i class="fas fa-plus"></i>
                         <p>Residential Apartment</p>
                     </div>
-                    <div class="wrap d-flex align-items-center my-2">
+                    <div id="true" class="wrap d-flex align-items-center my-2">
                         <i class="fas fa-plus"></i>
                         <p>Independent/Builder Floor</p>
                     </div>
-                    <div class="wrap d-flex align-items-center my-2">
+                    <div id="true" class="wrap d-flex align-items-center my-2">
                         <i class="fas fa-plus"></i>
                         <p>Residential Land</p>
                     </div>
-                    <div class="wrap d-flex align-items-center my-2">
+                    <div id="true" class="wrap d-flex align-items-center my-2">
                         <i class="fas fa-plus"></i>
                         <p>Independent House/Villa</p>
                     </div>
-                    <div class="wrap d-flex align-items-center my-2">
+                    <button id="button2" class="moreBtn" onclick="propertyTagToggle('button2','filterData2')">+3 More</button>
+                    <div class="d-none" id="filterData2">
+                    <div id="true" class="wrap d-flex align-items-center my-2">
                         <i class="fas fa-plus"></i>
                         <p>Farm House</p>
                     </div>
-                    <div class="wrap d-flex align-items-center my-2">
-                        <i class="fas fa-plus"></i>
-                        <p>Studio Apartment</p>
-                    </div>
-                    <div class="wrap d-flex align-items-center my-2">
-                        <i class="fas fa-plus"></i>
-                        <p>Serviced Apartments</p>
+                        <div id="true" class="wrap d-flex align-items-center my-2">
+                            <i class="fas fa-plus"></i>
+                            <p>Studio Apartment</p>
+                        </div>
+                        <div id="true" class="wrap d-flex align-items-center my-2">
+                            <i class="fas fa-plus"></i>
+                            <p>Serviced Apartments</p>
+                        </div>
                     </div>
                 </div>
                </div>
