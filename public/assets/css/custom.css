@@ -185,3 +185,146 @@ a.waves-effect.waves-block{
 .page-header-image{
     background-image: linear-gradient(red,red), url('../images/login.jpg');
 }
+.toggle_btn{
+    width:40px;
+    padding:10px;
+    margin-top:-5px;
+    position:relative;
+    border:none;
+    cursor:pointer;
+    outline:none;
+    background:transparent;
+}
+.toggle_btn span.back{
+    background: #d6efff;
+    position: absolute;
+    z-index: 1;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    border-radius: 10px;
+}
+.toggle_btn span.dot{
+    width:25px;
+    height:120%;
+    background:#fff;
+    box-shadow:0 1px 4px 0 rgb(0 ,106, 194, 45%);
+    display:block;
+    position:absolute;
+    z-index:2;
+    top:-2px;
+    border-radius:50%;
+    transition: .3s;
+    left:0;
+}
+.toggle_btn span.dot.active{
+    margin-left: 16px;
+}
+.cursor-pointer{
+    cursor: pointer;
+}
+.wrap{
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 25px;
+    transition: .3s;
+    cursor: pointer;
+}
+.wrap:hover,.wrap.active{
+    background-color:rgba(0, 0, 0, 0.137);
+}
+.wrap p{
+    font-size: 13px;
+    margin-left: 3px;
+    color: #636363;
+}
+.wrap i{
+    color: #494949;
+    /* font-weight: 400; */
+}
+#leftsidebar{
+    overflow: hidden;
+    overflow-y: scroll;
+}
+#leftsidebar::-webkit-scrollbar {
+    display: none;
+  }
+h6, .h6{
+    font-weight: 600;
+}
+
+/* filter toggle css */
+
+.header_type h6{
+    font-size: 12px;
+    font-weight: 700;
+    color: #455a64;
+    padding: 8px 12px;
+    position: relative;
+    font-weight: 700;
+}
+.header_type p, .header_type label{
+    color: #546e7a;
+    position: relative;
+    font-size: 13px;
+}
+
+#bedroom_content.active,
+#budgetContent.active,
+#propertyContent.active,
+#areaContent.active,
+#localitisContent.active,
+#constractionContent.active,
+#furnishedContent.active,
+#purchaseTypeContent.active,
+#approveStatus.active
+{
+    display: none;
+}
+#icon1,
+#icon2,
+#icon3,
+#icon4,
+#icon5,
+#icon6,
+#icon7,
+#icon8,
+#icon9
+{
+    transform: rotate(180deg);
+}
+#icon1.active,
+#icon2.active,
+#icon3.active,
+#icon4.active,
+#icon5.active,
+#icon6.active,
+#icon7.active,
+#icon8.active,
+#icon9.active
+{
+    transform: rotate(360deg);
+}
+
+
+#localitisContent label{
+    margin-left: 5px;
+    margin-bottom: 0;
+}
+
+
+.checkbox label::after{
+    color: #9b6fc1;
+    font-weight: 900;
+    font-size: 17px;
+}
+.moreBtn{
+    background: transparent;
+    border: none;
+    outline: none;
+    color:#0078DB;
+    cursor: pointer;
+    font-weight:600
+}
+
