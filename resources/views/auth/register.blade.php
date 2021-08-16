@@ -127,7 +127,7 @@
                     <div class="checkbox">
                             <input id="terms" type="checkbox"required>
                             <label for="terms">
-                                    I read and agree to the <a href="javascript:void(0);">terms of usage</a>
+                                    I read and agree to the <a href="{{url('/terms')}}">terms of usage</a>
                             </label>
                     </div>
                     <div class="footer text-center">
