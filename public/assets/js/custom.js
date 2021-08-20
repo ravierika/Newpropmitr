@@ -17,11 +17,18 @@ function myFunction(id) {
     }
 }
 
-function infoToggle(id, infoId) {
+function infoToggle(id, infoId,text) {
     const info = document.getElementById(id);
     const infoIdFixed = document.getElementById(infoId);
+    let btnText = document.getElementById(text);
     info.classList.toggle("d-none");
     infoIdFixed.classList.toggle("d-none");
+
+    if(btnText.innerText === 'Edit'){
+        btnText.innerText = 'Back'
+    }else{
+        btnText.innerText = 'Edit'
+    }
 }
 
 function buttonToggle() {

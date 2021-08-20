@@ -129,7 +129,7 @@
                             </form>
 
                             </div>
-                            <div class="col-md-9 mb-2">
+                            <div class="col-md-9 mb-cs-3">
                                 <h4 class="mb-1"><strong>{{$compn}}</strong></h4>
                                 <p class="mb-2 author_info"><small>Company Tagline Here</small></p>
 
@@ -154,7 +154,7 @@
                         <div class="header">
                             <h2><strong>Personal</strong> Information</h2>
                         </div>
-                        <li class="nav-item"><a onclick="infoToggle('profileInfoEdit','profileInfo')" class="nav-link active" data-toggle="tab" href="#about">Edit</a></li>
+                        <li class="nav-item"><a id="edit1" onclick="infoToggle('profileInfoEdit','profileInfo','edit1')" class="nav-link active" data-toggle="tab" href="#about">Edit</a></li>
                     </ul>
                     <div class="tab-content">
                         <form class="d-none" id="profileInfoEdit" method="POST" enctype="multipart/form-data" id="update_user" action="javascript:void(0)" >
@@ -239,7 +239,7 @@
                             <div class="header">
                                 <ul class="nav nav-tabs p-0 d-flex align-items-center justify-content-between">
                                     <h2><strong>Account</strong> Settings</h2>
-                                    <li class="nav-item ml-2"><a onclick="infoToggle('companyInfo','companyFixedInfo')" class="nav-link active" data-toggle="tab" href="#about">Edit</a></li>
+                                    <li class="nav-item ml-2"><a id="edit2" onclick="infoToggle('companyInfo','companyFixedInfo','edit2')" class="nav-link active" data-toggle="tab" href="#about">Edit</a></li>
                                 </ul>
                             </div>
                             {{-- change done --}}
