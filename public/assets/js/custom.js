@@ -30,7 +30,7 @@ function infoToggle(id, infoId,text) {
         btnText.innerText = 'Edit'
     }
 }
-
+// change
 function buttonToggle() {
     const dot = document.getElementById("dot");
     dot.classList.toggle("active");
