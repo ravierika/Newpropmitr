@@ -26,7 +26,7 @@
                 <div class="card profile-header">
                     <div class="body">
                         <div class="row">
-                            <div class="col-md-3 mb-2 text-center">
+                            <div class="col-md-3 mb-2 position-relative">
 
                             <form method="POST" enctype="multipart/form-data" id="upload_image_form" action="javascript:void(0)" >
                                 @if(empty($user->file))
@@ -49,17 +49,19 @@
                                             alt="preview image" style="max-height: 120px; max-width: 120px;" >
                                         </div>
                                     </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <input type="file" class="ml-3" name="image" placeholder="Choose image" id="image" style="color:transparent;"/>
-                                            <span class="text-danger">{{ $errors->first('title') }}</span>
+                                    <div class="position-absolute profile_img_btn">
+                                        <div class="col-md-12">
+                                            <div class="form-group ml-4">
+                                                <input type="file" class="ml-0" name="image" placeholder="Choose image" id="image" style="color:transparent;"/>
+                                                <span class="text-danger">{{ $errors->first('title') }}</span>
+                                                <button type="submit" class="btn btn-primary">Submit</button>
+                                            </div>
                                         </div>
+                                    {{-- <div class="col-md-12 ml-2"> --}}
+                                    {{-- </div> --}}
                                     </div>
                                     @endif
 
-                                    <div class="col-md-12 ml-2">
-                                        <button type="submit" class="btn btn-primary">Submit</button>
-                                    </div>
 
 
 
@@ -88,7 +90,7 @@
                 <div class="card">
                     <div class="body">
                         <div class="row">
-                            <div class="col-md-3 mb-2 text-center">
+                            <div class="col-md-3 mb-2 position-relative">
 
                             <form method="POST" enctype="multipart/form-data" id="upload_image_formlogo" action="javascript:void(0)" >
                                 @if(empty($user->companylogo))
@@ -98,16 +100,19 @@
                                             alt="preview image" style="height: 90px; width: 95px;" >
                                         </div>
                                     </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <input type="file" class="ml-2" name="imagelogo" placeholder="Choose image" id="imagelogo" style="color:transparent;"/>
-                                            <span class="text-danger">{{ $errors->first('title') }}</span>
+                                    <div class="position-absolute profile_img_btn">
+                                        <div class="col-md-12">
+                                            <div class="form-group ml-4">
+                                                <input type="file" class="ml-0" name="imagelogo" placeholder="Choose image" id="imagelogo" style="color:transparent;"/>
+                                                <span class="text-danger">{{ $errors->first('title') }}</span>
+                                                <button type="submit" class="btn btn-primary">Submit</button>
+                                            </div>
                                         </div>
                                     </div>
                                 @else
                                 <div class="row">
                                     <div class="col-md-12 mb-2">
-                                        <div class="profile-image float-md-left ml-2 "> <img id="image_preview_containerlogo" src="{{ asset('storage/logoimages/' .$user->companylogo) }}"
+                                        <div class="profile-image float-md-left ml-2"> <img id="image_preview_containerlogo" src="{{ asset('storage/logoimages/' .$user->companylogo) }}"
                                             alt="preview image" style="height: 90px; width: 95px;" >
                                         </div>
                                     </div>
@@ -115,13 +120,14 @@
                                         <div class="form-group">
                                             <input type="file" class="ml-2" name="image" placeholder="Choose image" id="imagelogo" style="color:transparent;"/>
                                             <span class="text-danger">{{ $errors->first('title') }}</span>
+                                            <button type="submit" class="btn btn-primary">Submit</button>
                                         </div>
                                     </div>
                                     @endif
 
-                                    <div class="col-md-12 ml-2">
-                                        <button type="submit" class="btn btn-primary">Submit</button>
-                                    </div>
+                                    {{-- <div class="col-md-12 ml-2">
+
+                                    </div> --}}
 
 
 
