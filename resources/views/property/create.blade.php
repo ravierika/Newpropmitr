@@ -43,13 +43,20 @@
                             <span class="validation"><span></span></span>
                             <span class="line"></span>
                             <span class="validation"><span></span></span>
+                            <span class="line"></span>
+                            <span class="validation"><span></span></span>
                         </div>
                         <div class="validation_title">
-                            <h3>hello</h3>
-                            <h3>hello</h3>
-                            <h3>hello</h3>
-                            <h3>hello</h3>
-                            <h3>hello</h3>
+                            <h6 onclick="propertiesRender('basic_detail','create_render')">Basic Details</h6>
+                            <p><span>Step 1</span></p>
+                            <h6 onclick="propertiesRender('location','create_render')">Location Details</h6>
+                            <p><span>Step 2</span></p>
+                            <h6 onclick="propertiesRender('feauture','create_render')">Property Profile</h6>
+                            <p><span>Step 3</span></p>
+                            <h6 onclick="propertiesRender('price','create_render')">Pricing & Others</h6>
+                            <p><span>Step 4</span></p>
+                            <h6 onclick="propertiesRender('image','create_render')">Photos</h6>
+                            <p><span>Step 5</span></p>
                         </div>
                     </div>
                 </div>
@@ -65,50 +72,55 @@
                             <input type="hidden" value="{{Auth::user()->company}}" name="company">
                             <input type="hidden" value="{{Auth::user()->name}}" name="agent">
 
-                            <h6 class="mt-2">Property Information</h6>
-                            <div class="row clearfix mt-3">
-                                <div class="col-sm-6">
-                                    <div class="radio inlineblock m-r-45">
-                                        <input type="radio" class="form-control" name="for" id="radio1" value="sale" checked="">
-                                        <label for="radio1">For Sale</label>
-                                    </div>
-                                    <div class="radio inlineblock m-r-45">
-                                        <input type="radio" class="form-control" name="for" id="radio2" value="rent">
-                                        <label for="radio2">For Rent</label>
-                                    </div>
+                            <div id="basic_detail" class="create_render">
+                                <h6 class="mt-2">Property Information</h6>
+                                <div class="row clearfix mt-3">
+                                    <div class="col-sm-6">
+                                        <div class="radio inlineblock m-r-45">
+                                            <input type="radio" class="form-control" name="for" id="radio1" value="sale" checked="">
+                                            <label for="radio1">For Sale</label>
+                                        </div>
+                                        <div class="radio inlineblock m-r-45">
+                                            <input type="radio" class="form-control" name="for" id="radio2" value="rent">
+                                            <label for="radio2">For Rent</label>
+                                        </div>
 
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <select name="type" class="form-control show-tick ms select2" data-placeholder="Select">
+                                                <option value="">-- Property Type --</option>
+                                                <optgroup label="Residential">
+                                                    <option value="Resindential Apartment">Resindential Apartment</option>
+                                                    <option value="RH">Residential House</option>
+                                                    <option value="V">Villa</option>
+                                                    <option value="BL">Builder Floor</option>
+                                                    <option value="NE">Nebraska</option>
+                                                    <option value="RLP">Residential Land/Plot</option>
+                                                    <option value="PH">Penthouse</option>
+                                                    <option value="SA">Studio Apartment</option>
+                                                </optgroup>
+                                                <optgroup label="Commercial">
+                                                    <option value="COS">Commercial Office Space</option>
+                                                    <option value="OIT">Office in IT Park/SEZ</option>
+                                                    <option value="CS">Commercial Shop</option>
+                                                    <option value="CSR">Commercial Showroom</option>
+                                                    <option value="CL">Commercial Land</option>
+                                                    <option value="WG">Warehouse/Godown</option>
+                                                    <option value="IL">Industrial Land</option>
+                                                    <option value="IB">Industrial Building</option>
+                                                    <option value="IS">Industrial Shed</option>
+                                                </optgroup>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 d-flex justify-content-between align-items-center">
+                                        <a href="javascript:void(0)" onclick="propertiesRender('location','create_render')" type="submit" class="btn btn-primary btn-round">Next</a>
+                                    </div>
                                 </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <select name="type" class="form-control show-tick ms select2" data-placeholder="Select">
-                                            <option value="">-- Property Type --</option>
-                                            <optgroup label="Residential">
-                                                <option value="Resindential Apartment">Resindential Apartment</option>
-                                                <option value="RH">Residential House</option>
-                                                <option value="V">Villa</option>
-                                                <option value="BL">Builder Floor</option>
-                                                <option value="NE">Nebraska</option>
-                                                <option value="RLP">Residential Land/Plot</option>
-                                                <option value="PH">Penthouse</option>
-                                                <option value="SA">Studio Apartment</option>
-                                            </optgroup>
-                                            <optgroup label="Commercial">
-                                                <option value="COS">Commercial Office Space</option>
-                                                <option value="OIT">Office in IT Park/SEZ</option>
-                                                <option value="CS">Commercial Shop</option>
-                                                <option value="CSR">Commercial Showroom</option>
-                                                <option value="CL">Commercial Land</option>
-                                                <option value="WG">Warehouse/Godown</option>
-                                                <option value="IL">Industrial Land</option>
-                                                <option value="IB">Industrial Building</option>
-                                                <option value="IS">Industrial Shed</option>
-                                            </optgroup>
-                                        </select>
-                                    </div>
-                                </div>
-
-
                             </div>
+
+                            <div id="location" class="create_render create_render_active">
                             <h6 class="mt-2">Property Location</h6>
                             <div class="row clearfix mt-3">
                                 <div class="col-sm-6">
@@ -131,8 +143,13 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="col-12 d-flex justify-content-between align-items-center">
+                                    <a href="javascript:void(0)" onclick="propertiesRender('feauture','create_render')" type="submit" class="btn btn-primary btn-round">Next</a>
+                                    <a href="javascript:void(0)" onclick="propertiesRender('basic_detail','create_render')" type="submit" class="btn btn-default btn-round btn-simple">Previous</a>
+                                </div>
                             </div>
-
+                        </div>
+                        <div id="feauture" class="create_render create_render_active">
                             <h6 class="mt-4">Property Features </h6>
                             <div class="row mt-3">
                                 <div class="col-lg-3 col-md-4 col-sm-6">
@@ -289,6 +306,7 @@
 
                             </div>
 
+
                             <div class="row clearfix mt-3" id="replace">
                                 <div class="col-sm-6">
                                     <div class="form-group">
@@ -301,9 +319,14 @@
                                     </div>
                                 </div>
 
+                                <div class="col-12 d-flex justify-content-between align-items-center">
+                                    <a href="javascript:void(0)" onclick="propertiesRender('price','create_render')" type="submit" class="btn btn-primary btn-round">Next</a>
+                                    <a href="javascript:void(0)" onclick="propertiesRender('location','create_render')" type="submit" class="btn btn-default btn-round btn-simple">Previous</a>
+                                </div>
 
                             </div>
-
+                        </div>
+                        <div id="price" class="create_render create_render_active">
                             <h6 class="mt-2">Price Details</h6>
                             <div class="row clearfix mt-3">
                                 <div class="col-sm-6">
@@ -327,8 +350,13 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="col-12 d-flex justify-content-between align-items-center">
+                                    <a href="javascript:void(0)" onclick="propertiesRender('image','create_render')" type="submit" class="btn btn-primary btn-round">Next</a>
+                                    <a href="javascript:void(0)" onclick="propertiesRender('feauture','create_render')" type="submit" class="btn btn-default btn-round btn-simple">Previous</a>
+                                </div>
                             </div>
-
+                        </div>
+                        <div id="image" class="create_render create_render_active">
                             <div class="row clearfix">
                                 <div class="col-sm-10">
                                     <h6 class="mt-4">Upload Images</h6>
@@ -339,11 +367,12 @@
                                     </div>
                                 </div>
                             </div>
-                                <div class="col-sm-12 mt-3">
-                                    <button type="submit" class="btn btn-primary btn-round">Submit</button>
-                                    <button type="submit" class="btn btn-default btn-round btn-simple">Cancel</button>
-                                </div>
+                            <div class="col-sm-12 mt-3">
+                                <button type="submit" class="btn btn-primary btn-round">Submit</button>
+                                <button type="submit" class="btn btn-default btn-round btn-simple">Cancel</button>
+                            </div>
 
+                            </div>
                             </div>
                         </form>
                     </div>
@@ -355,6 +384,7 @@
 @section('scriptsc')
 <script src="{{URL::asset('assets/plugins/select2/select2.min.js')}}"></script> <!-- Select2 Js -->
 <script src="{{URL::asset('assets/js/pages/forms/advanced-form-elements.js')}}"></script>
+<script src="{{URL::asset('assets/js/custom.js')}}"></script>
 <script src="{{URL::asset('assets/plugins/fancyuploder/jquery.ui.widget.js')}}"></script>
 <script src="{{URL::asset('assets/plugins/fancyuploder/jquery.fileupload.js')}}"></script>
 <script src="{{URL::asset('assets/plugins/fancyuploder/jquery.iframe-transport.js')}}"></script>

@@ -358,7 +358,7 @@ h6, .h6{
 }
 .line{
     width: 1.3px;
-    height: 45px;
+    height: 50px;
     background-color: green;
     display:block;
 }
@@ -378,4 +378,25 @@ h6, .h6{
 }
 .profile_img_btn .form-group button{
     margin-left: 4px;
+}
+.validation_title p,.validation_title h6{
+    cursor: pointer;
+    color: #42526E;
+    font-family:Arial, Helvetica, sans-serif;
+}
+.validation_title p{
+    margin-bottom: 24px;
+}
+.validation_title h6{
+    margin-bottom: 0px;
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: 5px;
+    text-transform: capitalize;
+}
+.validation_title h6.active{
+    color:#091E42;
+}
+.create_render_active{
+    display: none;
 }

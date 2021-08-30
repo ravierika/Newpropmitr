@@ -58,6 +58,29 @@ function propertyTagToggle(btnId, dataId) {
 //     console.log(e);
 // }
 
+
+
+
+
+
+// properties create render
+function propertiesRender(id,className){
+    const idName = document.getElementById(id);
+
+    // all container
+    const container = document.getElementsByClassName(className);
+    for (let i = 0; i < container.length; i++) {
+        const element = container[i];
+        element.classList.add('create_render_active')
+    }
+    idName.classList.remove('create_render_active');
+}
+
+
+
+
+
+
 const element = document.getElementById('propertyType');
 
 element.addEventListener('click', (e) => {
@@ -68,3 +91,5 @@ element.addEventListener('click', (e) => {
         element.parentNode.classList.toggle('active')
     }
 })
+
+
