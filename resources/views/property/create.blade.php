@@ -51,7 +51,7 @@
                             <p><span>Step 1</span></p>
                             <h6 onclick="propertiesRender('location','create_render')">Location Details</h6>
                             <p><span>Step 2</span></p>
-                            <h6 onclick="propertiesRender('feauture','create_render')">Property Profile</h6>
+                            <h6 onclick="propertiesRender('feature','create_render')">Property Profile</h6>
                             <p><span>Step 3</span></p>
                             <h6 onclick="propertiesRender('price','create_render')">Pricing & Others</h6>
                             <p><span>Step 4</span></p>
@@ -65,6 +65,7 @@
                 <div class="card">
                     <div class="header">
                         <h2><strong>Add your Property<small>It will do wonders...</small> </h2>
+
                     </div>
                     <div class="body">
                         <form class="form-horizontal" method="Post" action="{{route('properties.store')}}" enctype="multipart/form-data">
@@ -72,68 +73,78 @@
                             <input type="hidden" value="{{Auth::user()->company}}" name="company">
                             <input type="hidden" value="{{Auth::user()->name}}" name="agent">
 
-                            <div id="basic_detail" class="create_render">
-                                <h6 class="mt-2">Property Information</h6>
-                                <div class="row clearfix mt-3">
-                                    <div class="col-sm-6">
-                                        <div class="radio inlineblock m-r-45">
-                                            <input type="radio" class="form-control" name="for" id="radio1" value="sale" checked="">
-                                            <label for="radio1">For Sale</label>
-                                        </div>
-                                        <div class="radio inlineblock m-r-45">
-                                            <input type="radio" class="form-control" name="for" id="radio2" value="rent">
-                                            <label for="radio2">For Rent</label>
-                                        </div>
+                            <div id="basic_detail"  class="create_render">
 
+                            <h6 class="mt-2">Property Information</h6>
+                            <div class="row clearfix mt-3">
+                                <div class="col-sm-6">
+                                    <div class="radio inlineblock m-r-45">
+                                        <input type="radio" class="form-control" name="for" id="radio1" value="sale" checked="">
+                                        <label for="radio1">For Sale</label>
                                     </div>
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <select name="type" class="form-control show-tick ms select2" data-placeholder="Select">
-                                                <option value="">-- Property Type --</option>
-                                                <optgroup label="Residential">
-                                                    <option value="Resindential Apartment">Resindential Apartment</option>
-                                                    <option value="RH">Residential House</option>
-                                                    <option value="V">Villa</option>
-                                                    <option value="BL">Builder Floor</option>
-                                                    <option value="NE">Nebraska</option>
-                                                    <option value="RLP">Residential Land/Plot</option>
-                                                    <option value="PH">Penthouse</option>
-                                                    <option value="SA">Studio Apartment</option>
-                                                </optgroup>
-                                                <optgroup label="Commercial">
-                                                    <option value="COS">Commercial Office Space</option>
-                                                    <option value="OIT">Office in IT Park/SEZ</option>
-                                                    <option value="CS">Commercial Shop</option>
-                                                    <option value="CSR">Commercial Showroom</option>
-                                                    <option value="CL">Commercial Land</option>
-                                                    <option value="WG">Warehouse/Godown</option>
-                                                    <option value="IL">Industrial Land</option>
-                                                    <option value="IB">Industrial Building</option>
-                                                    <option value="IS">Industrial Shed</option>
-                                                </optgroup>
-                                            </select>
-                                        </div>
+                                    <div class="radio inlineblock m-r-45">
+                                        <input type="radio" class="form-control" name="for" id="radio2" value="rent">
+                                        <label for="radio2">For Rent</label>
                                     </div>
-                                    <div class="col-12 d-flex justify-content-between align-items-center">
-                                        <a href="javascript:void(0)" onclick="propertiesRender('location','create_render')" type="submit" class="btn btn-primary btn-round">Next</a>
+
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <select id="typeOfProperty" onchange="propertyType()" name="type" class="form-control show-tick ms select2" data-placeholder="Select">
+                                            <option value="">-- Property Type --</option>
+                                            <optgroup label="Residential">
+                                                <option value="FA">Flat/Apartment</option>
+                                                <option value="RH">Residential House</option>
+                                                <option value="V">Villa</option>
+                                                <option value="BL">Builder Floor</option>
+                                                <option value="NE">Nebraska</option>
+                                                <option value="RLP">Residential Land/Plot</option>
+                                                <option value="PH">Penthouse</option>
+                                                <option value="SA">Studio Apartment</option>
+                                            </optgroup>
+                                            <optgroup label="Commercial">
+                                                <option value="COS">Commercial Office Space</option>
+                                                <option value="OIT">Office in IT Park/SEZ</option>
+                                                <option value="CS">Commercial Shop</option>
+                                                <option value="CSR">Commercial Showroom</option>
+                                                <option value="CL">Commercial Land</option>
+                                                <option value="WG">Warehouse/Godown</option>
+                                                <option value="IL">Industrial Land</option>
+                                                <option value="IB">Industrial Building</option>
+                                                <option value="IS">Industrial Shed</option>
+                                            </optgroup>
+                                        </select>
                                     </div>
                                 </div>
+                                <div class="col-12 d-flex justify-content-between align-items-center">
+                                    <a href="javascript:void(0)" onclick="propertiesRender('location','create_render')" type="submit" class="btn btn-primary btn-round">Next</a>
+                                </div>
                             </div>
+                        </div>
 
-                            <div id="location" class="create_render create_render_active">
+                        <div id="location" class="create_render create_render_active">
+
                             <h6 class="mt-2">Property Location</h6>
                             <div class="row clearfix mt-3">
                                 <div class="col-sm-6">
                                     <div class="form-group">
+                                        <label class="d-flex align-items-center" for="city"><span class="red ml-3">*</span> <span>Enter City</span></label>
                                         <input class="form-control" name="city" id="city" placeholder="Enter City">                                </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
+                                        <label class="d-flex align-items-center" for="locality"><span class="red ml-3">*</span> <span>Enter Locality</span></label>
                                         <input class="form-control" name="locality" id="locality" placeholder="Enter Locality">
                                     </div>
                                 </div>
-
+                                <div class="col-12 d-flex justify-content-between align-items-center">
+                                    <a href="javascript:void(0)" onclick="propertiesRender('feature','create_render')" type="submit" class="btn btn-primary btn-round">Next</a>
+                                    <a href="javascript:void(0)" onclick="propertiesRender('basic_detail','create_render')" type="submit" class="btn btn-default btn-round btn-simple">Previous</a>
+                                </div>
                             </div>
+                        </div>
+
+                        <div id="feature"  class="create_render create_render_active">
                             <h2 class="card-inside-title">Property Address</h2>
                             <div class="row clearfix">
                                 <div class="col-sm-12">
@@ -143,17 +154,16 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-12 d-flex justify-content-between align-items-center">
-                                    <a href="javascript:void(0)" onclick="propertiesRender('feauture','create_render')" type="submit" class="btn btn-primary btn-round">Next</a>
-                                    <a href="javascript:void(0)" onclick="propertiesRender('basic_detail','create_render')" type="submit" class="btn btn-default btn-round btn-simple">Previous</a>
-                                </div>
                             </div>
-                        </div>
-                        <div id="feauture" class="create_render create_render_active">
-                            <h6 class="mt-4">Property Features </h6>
+                            <div id="comercial_offece_space"></div>
+                            <div id="comercial_offece_space2"></div>
+
+                            <h6 class="mt-4">Property features </h6>
+                            <div id="toggleContent">
                             <div class="row mt-3">
                                 <div class="col-lg-3 col-md-4 col-sm-6">
                                     <div class="form-line">
+                                        <label class="d-flex align-items-center" for="bedrooms"><span class="red ml-3">*</span> <span>Bedrooms</span></label>
                                         <select name="bedrooms" class="form-control show-tick">
                                             <option value="">-- Bedrooms --</option>
                                             <option value="1" >1</option>
@@ -167,6 +177,7 @@
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-sm-6">
                                     <div class="form-line">
+                                        <label class="d-flex align-items-center" for="bathrooms"><span class="red ml-3">*</span> <span>Bathrooms</span></label>
                                         <select name="bathrooms" class="form-control show-tick">
                                             <option value="">-- Bathrooms --</option>
                                             <option value="1" >1</option>
@@ -180,6 +191,7 @@
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-sm-6">
                                     <div class="form-line">
+                                        <label class="d-flex align-items-center" for="balconies"><span class="red ml-3">*</span> <span>Balconies</span></label>
                                         <select name="balconies" class="form-control show-tick">
                                             <option value="">-- Balconies --</option>
                                             <option value="1" >1</option>
@@ -194,6 +206,7 @@
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-sm-6">
                                     <div class="form-line">
+                                        <label class="d-flex align-items-center" for="furnishing"><span class="red ml-3">*</span> <span>Furnished Status</span></label>
                                         <select name="furnishing" class="form-control show-tick">
                                             <option value="">-- Furnished Status --</option>
                                             <option value="1" >Fully Furnished</option>
@@ -208,6 +221,7 @@
                             <div class="row clearfix mt-3">
                                 <div class="col-sm-6">
                                     <div class="form-group">
+                                        <label class="d-flex align-items-center" for="propertyOnFloor"><span class="red ml-3">*</span> <span>Floor Number</span></label>
                                         <select name="propertyOnFloor" class="form-control show-tick">
                                             <option value="">-- Floor Number --</option>
                                             <option value="1" >1</option>
@@ -227,6 +241,7 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
+                                        <label class="d-flex align-items-center" for="totalFloors"><span class="red ml-3">*</span> <span>Total Floors</span></label>
                                         <select name="totalFloors" class="form-control show-tick">
                                             <option value="">-- Total Floors --</option>
                                             <option value="1" >1</option>
@@ -246,19 +261,22 @@
                                 </div>
 
                             </div>
+                            </div>
 
                             <h6 class="mt-1">Area Details </h6>
                             <div class="row mt-3">
                                 <div class="col-lg-3 col-md-4 col-sm-6">
                                     <div class="form-group">
+                                        <label class="d-flex align-items-center" for="carpetArea"><span class="red ml-3">*</span> <span>Carpet Area</span></label>
                                         <input type="text" name="carpetArea" class="form-control" placeholder="Carpet Area">
 
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-sm-6">
                                     <div class="form-line">
+                                        <label class="d-flex align-items-center" for="areaUnitc"><span class="red ml-3">*</span> <span>Area Unit</span></label>
                                         <select name="areaUnitc" class="form-control show-tick">
-                                            <option value="">-- Area Unit --</option>
+                                            {{-- <option value="">-- Area Unit --</option> --}}
                                             <option value="1" >Sq-ft</option>
                                             <option value="2" >Sq-mt</option>
                                             <option value="3" >Sq-yrd</option>
@@ -270,14 +288,16 @@
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-sm-6">
                                     <div class="form-group">
+                                        <label class="d-flex align-items-center" for="superArea"><span class="red ml-3">*</span> <span>Super Area</span></label>
                                         <input type="text" name="superArea" class="form-control" placeholder="Super Area">
 
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-sm-6">
                                     <div class="form-line">
+                                        <label class="d-flex align-items-center" for="areaUnits"><span class="red ml-3">*</span> <span>Area Unit</span></label>
                                         <select name="areaUnits" class="form-control show-tick">
-                                            <option value="">-- Area Unit --</option>
+                                            {{-- <option value="">-- Area Unit --</option> --}}
                                             <option value="1" >Sq-ft</option>
                                             <option value="2" >Sq-mt</option>
                                             <option value="3" >Sq-yrd</option>
@@ -306,12 +326,12 @@
 
                             </div>
 
-
                             <div class="row clearfix mt-3" id="replace">
                                 <div class="col-sm-6">
                                     <div class="form-group">
+                                        <label class="d-flex align-items-center" for="ageOfConstruction"><span class="red ml-3">*</span> <span>AGE of Construction</span></label>
                                         <select name="ageOfConstruction" class="form-control show-tick">
-                                            <option value="">-- AGE of Construction --</option>
+                                            {{-- <option value="">-- AGE of Construction --</option> --}}
                                             <option value="New" >New Construction</option>
                                             <option value="<5" >Less than 5 Years</option>
                                             <option value="5-10" >5 to 10 Years</option>
@@ -319,11 +339,13 @@
                                     </div>
                                 </div>
 
+
+                            </div>
+                            <div class="row">
                                 <div class="col-12 d-flex justify-content-between align-items-center">
                                     <a href="javascript:void(0)" onclick="propertiesRender('price','create_render')" type="submit" class="btn btn-primary btn-round">Next</a>
                                     <a href="javascript:void(0)" onclick="propertiesRender('location','create_render')" type="submit" class="btn btn-default btn-round btn-simple">Previous</a>
                                 </div>
-
                             </div>
                         </div>
                         <div id="price" class="create_render create_render_active">
@@ -331,28 +353,30 @@
                             <div class="row clearfix mt-3">
                                 <div class="col-sm-6">
                                     <div class="form-group">
+                                        <label class="d-flex align-items-center" for="expectedPrice"><span class="red ml-3">*</span> <span>Expected Price</span></label>
                                         <input type="number" name="expectedPrice" class="form-control" placeholder="Expected Price">
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
+                                        <label class="d-flex align-items-center" for="tokenMoney"><span class="red ml-3">*</span> <span>Token Amount</span></label>
                                         <input type="number" name="tokenMoney" class="form-control" placeholder="Token Amount">
                                     </div>
                                 </div>
 
                             </div>
-                            <h2 class="card-inside-title">Property Description</h2>
+                            <h2 class="card-inside-title">Property Description <span class="red">*</span></h2>
                             <div class="row clearfix">
                                 <div class="col-sm-12">
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <textarea rows="1" maxlength="500" name="description" class="form-control no-resize" placeholder="Please type some description to highlight your property (Max 500 characters)"></textarea>
+                                            <textarea rows="1" name="description" class="form-control no-resize" placeholder="Please type some description to highlight your property"></textarea>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-12 d-flex justify-content-between align-items-center">
                                     <a href="javascript:void(0)" onclick="propertiesRender('image','create_render')" type="submit" class="btn btn-primary btn-round">Next</a>
-                                    <a href="javascript:void(0)" onclick="propertiesRender('feauture','create_render')" type="submit" class="btn btn-default btn-round btn-simple">Previous</a>
+                                    <a href="javascript:void(0)" onclick="propertiesRender('feature','create_render')" type="submit" class="btn btn-default btn-round btn-simple">Previous</a>
                                 </div>
                             </div>
                         </div>
@@ -367,13 +391,17 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-12 mt-3">
-                                <button type="submit" class="btn btn-primary btn-round">Submit</button>
-                                <button type="submit" class="btn btn-default btn-round btn-simple">Cancel</button>
-                            </div>
+                            <div class="col-12 d-flex justify-content-between align-items-center">
+                                <div class="col-sm-12 mt-3">
+                                    <button type="submit" class="btn btn-primary btn-round">Submit</button>
+                                    <button type="submit" class="btn btn-default btn-round btn-simple">Cancel</button>
+                                </div>
+                                    <a href="javascript:void(0)" onclick="propertiesRender('price','create_render')" type="submit" class="btn btn-primary btn-round">Previous</a>
+                                </div>
 
                             </div>
-                            </div>
+                        </div>
+
                         </form>
                     </div>
                 </div>
@@ -384,14 +412,17 @@
 @section('scriptsc')
 <script src="{{URL::asset('assets/plugins/select2/select2.min.js')}}"></script> <!-- Select2 Js -->
 <script src="{{URL::asset('assets/js/pages/forms/advanced-form-elements.js')}}"></script>
-<script src="{{URL::asset('assets/js/custom.js')}}"></script>
 <script src="{{URL::asset('assets/plugins/fancyuploder/jquery.ui.widget.js')}}"></script>
 <script src="{{URL::asset('assets/plugins/fancyuploder/jquery.fileupload.js')}}"></script>
 <script src="{{URL::asset('assets/plugins/fancyuploder/jquery.iframe-transport.js')}}"></script>
 <script src="{{URL::asset('assets/plugins/fancyuploder/jquery.fancy-fileupload.js')}}"></script>
 <script src="{{URL::asset('assets/plugins/fancyuploder/fancy-uploader.js')}}"></script>
+<script src="{{URL::asset('assets/js/custom.js')}}"></script>
+<script src="{{URL::asset('assets/js/render.js')}}"></script>
+
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script type="text/javascript" src="{{URL::asset('dist/image-uploader.min.js')}}"></script>
+
 
 <script>
     $(document).ready( function()
