@@ -59,13 +59,25 @@ function propertyTagToggle(btnId, dataId) {
 // }
 
 
-
+function toggleValidation(allElement,condition){
+    for (let i = 0; i < allElement.length; i++) {
+        const idIndicator = allElement[i];
+        const id = document.getElementById(idIndicator);
+        if (condition === true) {
+            id.classList.add('active');
+        }else{
+            id.classList.remove('active');
+        }
+    }
+}
 
 
 
 // properties create render
-function propertiesRender(id,className){
+function propertiesRender(id,className,condition,array){
     const idName = document.getElementById(id);
+
+    toggleValidation(array,condition)
 
     // all container
     const container = document.getElementsByClassName(className);

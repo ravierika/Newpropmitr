@@ -36,15 +36,15 @@
                 <div class="filter-card">
                     <div class="row">
                         <div class="col-1 validation_container">
-                            <span class="validation"><span></span></span>
+                            <span class="validation"><span class="active"></span></span>
                             <span class="line"></span>
-                            <span class="validation"><span></span></span>
+                            <span class="validation"><span id="val1"></span></span>
                             <span class="line"></span>
-                            <span class="validation"><span></span></span>
+                            <span class="validation"><span id="val2"></span></span>
                             <span class="line"></span>
-                            <span class="validation"><span></span></span>
+                            <span class="validation"><span id="val3"></span></span>
                             <span class="line"></span>
-                            <span class="validation"><span></span></span>
+                            <span class="validation"><span id="val4"></span></span>
                         </div>
                         <div class="validation_title">
                             <h6 onclick="propertiesRender('basic_detail','create_render')">Basic Details</h6>
@@ -117,7 +117,7 @@
                                     </div>
                                 </div>
                                 <div class="col-12 d-flex justify-content-between align-items-center">
-                                    <a href="javascript:void(0)" onclick="propertiesRender('location','create_render')" type="submit" class="btn btn-primary btn-round">Next</a>
+                                    <a href="javascript:void(0)" onclick="propertiesRender('location','create_render', true,['val1'])" type="submit" class="btn btn-primary btn-round">Next 2</a>
                                 </div>
                             </div>
                         </div>
@@ -138,8 +138,8 @@
                                     </div>
                                 </div>
                                 <div class="col-12 d-flex justify-content-between align-items-center">
-                                    <a href="javascript:void(0)" onclick="propertiesRender('feature','create_render')" type="submit" class="btn btn-primary btn-round">Next</a>
-                                    <a href="javascript:void(0)" onclick="propertiesRender('basic_detail','create_render')" type="submit" class="btn btn-default btn-round btn-simple">Previous</a>
+                                    <a href="javascript:void(0)" onclick="propertiesRender('feature','create_render', true,['val1','val2'])" type="submit" class="btn btn-primary btn-round">Next</a>
+                                    <a href="javascript:void(0)" onclick="propertiesRender('basic_detail','create_render', false, ['val1'])" type="submit" class="btn btn-default btn-round btn-simple">Previous</a>
                                 </div>
                             </div>
                         </div>
@@ -343,8 +343,8 @@
                             </div>
                             <div class="row">
                                 <div class="col-12 d-flex justify-content-between align-items-center">
-                                    <a href="javascript:void(0)" onclick="propertiesRender('price','create_render')" type="submit" class="btn btn-primary btn-round">Next</a>
-                                    <a href="javascript:void(0)" onclick="propertiesRender('location','create_render')" type="submit" class="btn btn-default btn-round btn-simple">Previous</a>
+                                    <a href="javascript:void(0)" onclick="propertiesRender('price','create_render', true,['val1','val2','val3'])" type="submit" class="btn btn-primary btn-round">Next</a>
+                                    <a href="javascript:void(0)" onclick="propertiesRender('location','create_render',false,['val2','val3','val4'])" type="submit" class="btn btn-default btn-round btn-simple">Previous</a>
                                 </div>
                             </div>
                         </div>
@@ -375,8 +375,8 @@
                                     </div>
                                 </div>
                                 <div class="col-12 d-flex justify-content-between align-items-center">
-                                    <a href="javascript:void(0)" onclick="propertiesRender('image','create_render')" type="submit" class="btn btn-primary btn-round">Next</a>
-                                    <a href="javascript:void(0)" onclick="propertiesRender('feature','create_render')" type="submit" class="btn btn-default btn-round btn-simple">Previous</a>
+                                    <a href="javascript:void(0)" onclick="propertiesRender('image','create_render', true,['val1','val2','val3','val4'])" type="submit" class="btn btn-primary btn-round">Next</a>
+                                    <a href="javascript:void(0)" onclick="propertiesRender('feature','create_render',false,['val3','val4'])" type="submit" class="btn btn-default btn-round btn-simple">Previous</a>
                                 </div>
                             </div>
                         </div>
@@ -392,11 +392,11 @@
                                 </div>
                             </div>
                             <div class="col-12 d-flex justify-content-between align-items-center">
-                                <div class="col-sm-12 mt-3">
+                                <div>
                                     <button type="submit" class="btn btn-primary btn-round">Submit</button>
                                     <button type="submit" class="btn btn-default btn-round btn-simple">Cancel</button>
                                 </div>
-                                    <a href="javascript:void(0)" onclick="propertiesRender('price','create_render')" type="submit" class="btn btn-primary btn-round">Previous</a>
+                                    <a href="javascript:void(0)" onclick="propertiesRender('price','create_render',false,['val4'])" type="submit" class="btn btn-primary btn-round no_back">Previous</a>
                                 </div>
 
                             </div>
