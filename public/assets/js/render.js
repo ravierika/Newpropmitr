@@ -157,20 +157,20 @@ const commercial_shop_radio4 = `
 
 const floor_open_plot = `
     <div class="row clearfix mt-4">
-        <div class="col-sm-6 col-md-4">
+        <div class="col-sm-6 col-md-6 mb-2">
             ${total_floor}
         </div>
-        <div class="col-sm-6 col-md-4">
+        <div class="col-sm-6 col-md-6 mb-2">
             ${open_sides}
         </div>
-        <div class="col-sm-6 col-md-4">
+        <div class="col-sm-6 col-md-6 mb-2">
             ${plot}
         </div>
     </div>
 `;
 const common_detail = `
 <div class="row mt-4">
-    <div class="col-lg-3 col-md-4 col-sm-6">
+    <div class="mb-2 col-md-6 dd">
         <div class="form-line">
             <label class="d-flex align-items-center" for="bedrooms"><span class="red ml-3">*</span> <span>Bedrooms</span></label>
             <select name="bedrooms" class="form-control show-tick sp-2">
@@ -184,7 +184,7 @@ const common_detail = `
             </select>
         </div>
     </div>
-    <div class="col-lg-3 col-md-4 col-sm-6">
+    <div class=" col-md-6 mb-2 col-sm-6">
         <div class="form-line">
             <label class="d-flex align-items-center" for="bathrooms"><span class="red ml-3">*</span> <span>Bathrooms</span></label>
             <select name="bathrooms" class="form-control show-tick sp-2">
@@ -198,7 +198,7 @@ const common_detail = `
             </select>
         </div>
     </div>
-    <div class="col-lg-3 col-md-4 col-sm-6">
+    <div class=" col-md-6 mb-2 col-sm-6">
         <div class="form-line">
             <label class="d-flex align-items-center" for="balconies"><span class="red ml-3">*</span> <span>Balconies</span></label>
             <select name="balconies" class="form-control show-tick sp-2">
@@ -213,7 +213,7 @@ const common_detail = `
             </select>
         </div>
     </div>
-    <div class="col-lg-3 col-md-4 col-sm-6">
+    <div class=" col-md-6 mb-2 col-sm-6">
         <div class="form-line">
             <label class="d-flex align-items-center" for="furnishing"><span class="red ml-3">*</span> <span>Furnished Status</span></label>
             <select name="furnishing" class="form-control show-tick sp-2">
@@ -266,13 +266,13 @@ const type_flat = `
 `;
 const cnsPlotSide = `
 <div class="row my-3 mb-4">
-<div class="col-sm-6 col-md-4">
+<div class="col-sm-6 col-md-6 mb-2">
     ${allow_cons}
 </div>
-<div class="col-sm-6 col-md-4">
+<div class="col-sm-6 col-md-6 mb-2">
     ${open_sides}
 </div>
-<div class="col-sm-6 col-md-4">
+<div class="col-sm-6 col-md-6 mb-2">
     ${plot}
 </div>
 
@@ -291,13 +291,13 @@ const type_villa = `
 const type_residential_plot = `
     ${floor_open_plot}
     <div class="row my-3 mb-4">
-        <div class="col-sm-6 col-md-4">
+        <div class="col-sm-6 col-md-6 mb-2">
             ${residential_radio_type1}
         </div>
-        <div class="col-sm-6 col-md-4">
+        <div class="col-sm-6 col-md-6 mb-2">
             ${residential_radio_type2}
         </div>
-        <div class="col-sm-6 col-md-4">
+        <div class="col-sm-6 col-md-6 mb-2">
             ${residential_radio_type3}
         </div>
 
@@ -306,29 +306,29 @@ const type_residential_plot = `
 
 const commercial_office = `
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-6 mb-2">
             ${floor_number}
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6 mb-2">
             ${total_floor}
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6 mb-2">
             ${furnished}
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6 mb-2">
             ${washroom}
         </div>
     </div>
     <div class="row my-3 mb-4">
-        <div class="col-md-4">
+        <div class="col-md-6 mb-2">
             ${commercial_radio}
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6 mb-2">
             ${commercial_radio2}
         </div>
     </div>
 `;
-const zone = `<div class="col-md-4">
+const zone = `<div class="col-md-6 mb-2">
 <div class="form-line">
 <label class="d-flex align-items-center" for="land"><span class="red ml-3">*</span> <span>Land Zone</span></label>
     <select name="land" class="form-control sp-2 show-tick">
@@ -362,7 +362,7 @@ const zone = `<div class="col-md-4">
 const land_zone = `
     <div class="row clearfix mt-3">
         ${zone}
-        <div class="col-md-4">
+        <div class="col-md-6 mb-2">
             <div class="form-group">
                 <label class="d-flex align-items-center" for="land"><span class="red ml-3">*</span> <span>Ideal For Businesses</span></label>
                 <input class="form-control sp-2" name="land" id="land" placeholder="Please Enter Text">
@@ -379,13 +379,13 @@ const land_zone2OTS = `
 
 const commercial_shop = `
     <div class="row my-3">
-        <div class="col-md-4">
+        <div class="col-md-6 mb-2">
             ${floor_number}
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6 mb-2">
             ${total_floor}
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6 mb-2">
             ${furnished}
         </div>
     </div>
@@ -407,27 +407,27 @@ const commercial_shop = `
 
 const commercial_showroom = `
     <div class="row my-3">
-        <div class="col-md-4">
+        <div class="col-md-6 mb-2">
             ${floor_number}
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6 mb-2">
             ${total_floor}
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6 mb-2">
             ${furnished}
         </div>
     </div>
     <div class="row my-3 mb-4">
-        <div class="col-md-4 mb-2">
+        <div class="col-md-6 mb-2 mb-2">
             ${commercial_showroom_radio3}
         </div>
-        <div class="col-md-4 mb-2">
+        <div class="col-md-6 mb-2 mb-2">
             ${commercial_shop_radio4}
         </div>
-        <div class="col-md-4 mb-2">
+        <div class="col-md-6 mb-2 mb-2">
             ${commercial_radio}
         </div>
-        <div class="col-md-4 mb-2">
+        <div class="col-md-6 mb-2 mb-2">
             ${commercial_radio2}
         </div>
     </div>
@@ -436,18 +436,18 @@ const commercial_showroom = `
 
 const commercial_land = `
 <div class="row my-3 mb-4">
-    <div class="col-sm-6 col-md-4">
+    <div class="col-sm-6 col-md-6 mb-2">
         ${allow_cons}
     </div>
-    <div class="col-sm-6 col-md-4">
+    <div class="col-sm-6 col-md-6 mb-2">
         ${open_sides}
     </div>
-    <div class="col-sm-6 col-md-4">
+    <div class="col-sm-6 col-md-6 mb-2">
         ${plot}
     </div>
 </div>
 <div class="row my-3 mb-4">
-    <div class="col-md-4 mb-2">
+    <div class="col-md-6 mb-2 mb-2">
     <div class="d-flex align-items-center">
         <div class="mr-2">
             <label for="">Boundary wall made</label>
@@ -462,13 +462,13 @@ const commercial_land = `
 `;
 const warehouse = `
 <div class="row my-3">
-    <div class="col-md-4">
+    <div class="col-md-6 mb-2">
         ${floor_number}
     </div>
-    <div class="col-md-4">
+    <div class="col-md-6 mb-2">
         ${total_floor}
     </div>
-    <div class="col-md-4">
+    <div class="col-md-6 mb-2">
         ${furnished}
     </div>
 </div>
@@ -477,10 +477,10 @@ const warehouse = `
  const Industrial_land = `
     ${cnsPlotSide}
     <div class="row my-3 mb-4">
-    <div class="col-md-4 mb-2">
+    <div class="col-md-6 mb-2 mb-2">
         ${residential_radio_type1}
     </div>
-    <div class="col-md-4 mb-2">
+    <div class="col-md-6 mb-2 mb-2">
         ${residential_radio_type2}
     </div>
 </div>

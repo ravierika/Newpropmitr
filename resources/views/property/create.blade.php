@@ -117,7 +117,7 @@
                                     </div>
                                 </div>
                                 <div class="col-12 d-flex justify-content-between align-items-center">
-                                    <a href="javascript:void(0)" onclick="propertiesRender('location','create_render', true,['val1'])" type="submit" class="btn btn-primary btn-round">Next 2</a>
+                                    <a href="javascript:void(0)" onclick="propertiesRender('location','create_render', true,['val1'])" type="submit" class="btn btn-primary btn-round">Next</a>
                                 </div>
                             </div>
                         </div>
@@ -161,7 +161,7 @@
                             <h6 class="mt-4">Property features </h6>
                             <div id="toggleContent">
                             <div class="row mt-3">
-                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                <div class="col-md-6">
                                     <div class="form-line">
                                         <label class="d-flex align-items-center" for="bedrooms"><span class="red ml-3">*</span> <span>Bedrooms</span></label>
                                         <select name="bedrooms" class="form-control show-tick">
@@ -175,7 +175,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                <div class="col-md-6">
                                     <div class="form-line">
                                         <label class="d-flex align-items-center" for="bathrooms"><span class="red ml-3">*</span> <span>Bathrooms</span></label>
                                         <select name="bathrooms" class="form-control show-tick">
@@ -189,7 +189,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                <div class="col-sm-6">
                                     <div class="form-line">
                                         <label class="d-flex align-items-center" for="balconies"><span class="red ml-3">*</span> <span>Balconies</span></label>
                                         <select name="balconies" class="form-control show-tick">
@@ -204,7 +204,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                <div class="col-sm-6">
                                     <div class="form-line">
                                         <label class="d-flex align-items-center" for="furnishing"><span class="red ml-3">*</span> <span>Furnished Status</span></label>
                                         <select name="furnishing" class="form-control show-tick">
@@ -265,14 +265,14 @@
 
                             <h6 class="mt-1">Area Details </h6>
                             <div class="row mt-3">
-                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                <div class="col-sm-6">
                                     <div class="form-group">
                                         <label class="d-flex align-items-center" for="carpetArea"><span class="red ml-3">*</span> <span>Carpet Area</span></label>
                                         <input type="text" name="carpetArea" class="form-control" placeholder="Carpet Area">
 
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                <div class="col-sm-6">
                                     <div class="form-line">
                                         <label class="d-flex align-items-center" for="areaUnitc"><span class="red ml-3">*</span> <span>Area Unit</span></label>
                                         <select name="areaUnitc" class="form-control show-tick">
@@ -286,14 +286,14 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                <div class="col-sm-6">
                                     <div class="form-group">
                                         <label class="d-flex align-items-center" for="superArea"><span class="red ml-3">*</span> <span>Super Area</span></label>
                                         <input type="text" name="superArea" class="form-control" placeholder="Super Area">
 
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                <div class="col-sm-6">
                                     <div class="form-line">
                                         <label class="d-flex align-items-center" for="areaUnits"><span class="red ml-3">*</span> <span>Area Unit</span></label>
                                         <select name="areaUnits" class="form-control show-tick">

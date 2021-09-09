@@ -409,3 +409,6 @@ h6, .h6{
     color: #484848;
     box-shadow:none;
 }
+label{
+    font-size: 13px;
+}
