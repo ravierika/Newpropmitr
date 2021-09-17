@@ -59,7 +59,8 @@
         </div>
       </div>
     </div>
-    <div class="container-fluid">
+    <div class="container-fluid mt-4">
+        hello world
         @foreach($properties as $property)
       <div class="row clearfix">
         <div class="col-lg-10 col-md-10">

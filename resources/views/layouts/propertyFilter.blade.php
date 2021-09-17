@@ -74,7 +74,7 @@
 <div class="overlay"></div>
 
 <!-- Top Bar -->
-<nav class="navbar p-l-5 p-r-5">
+<nav class="navbar p-l-5 p-r-5 pl-37">
     <ul class="nav navbar-nav navbar-left">
         <li>
             <div class="navbar-header">
@@ -170,14 +170,16 @@
 <!-- Left Sidebar -->
 <aside id="leftsidebar" class="sidebar">
     <ul class="nav nav-tabs ml-4">
-        <!--<li class="nav-item"><a class="nav-link active" data-toggle="tab" href="/dashboard"><i class="zmdi zmdi-home m-r-5"></i>{{$comp}}</a></li>-->
-        <!--<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#user"><i class="zmdi zmdi-account m-r-5"></i>Agent</a></li>-->
+        {{-- <!--<li class="nav-item"><a class="nav-link active" data-toggle="tab" href="/dashboard"><i class="zmdi zmdi-home m-r-5"></i>{{$comp}}</a></li>-->
+        <!--<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#user"><i class="zmdi zmdi-account m-r-5"></i>Agent</a></li>--> --}}
     </ul>
     <div class="tab-content">
         <div class="tab-pane stretchRight active" id="dashboard">
-            <div class="menu p-3 header_type">
+            <div class="menu p-3 pt-0 header_type">
 
-
+                <div class="back_btn">
+                    <button><i class="zmdi zmdi-arrow-left"></i> Back</button>
+                </div>
                <div class="d-flex justify-content-between align-items-center">
                    <h6>Hide already seen</h6>
                    <button onclick="buttonToggle()" class="toggle_btn">
@@ -216,13 +218,13 @@
                     <div class="row">
                         <div class="col-6 px-1">
                             <div class="wrap d-flex align-items-center justify-content-center">
-                                <i class="fas fa-plus"></i>
+                                <i class="zmdi zmdi-plus"></i>
                                 <p>1RK/ 1BHK</p>
                             </div>
                         </div>
                         <div class="col-6 px-1">
                             <div class="wrap d-flex align-items-center justify-content-center">
-                                <i class="fas fa-plus"></i>
+                                <i class="zmdi zmdi-plus"></i>
                                 <p>2BHK</p>
                             </div>
                         </div>
@@ -230,19 +232,19 @@
                     <div class="row my-3">
                         <div class="col-4 px-1">
                             <div class="wrap d-flex align-items-center justify-content-center">
-                                <i class="fas fa-plus"></i>
+                                <i class="zmdi zmdi-plus"></i>
                                 <p>3BHK</p>
                             </div>
                         </div>
                         <div class="col-4 px-1">
                             <div class="wrap d-flex align-items-center justify-content-center">
-                                <i class="fas fa-plus"></i>
+                                <i class="zmdi zmdi-plus"></i>
                                 <p>4BHK</p>
                             </div>
                         </div>
                         <div class="col-4 px-1">
                             <div class="wrap d-flex align-items-center justify-content-center">
-                                <i class="fas fa-plus"></i>
+                                <i class="zmdi zmdi-plus"></i>
                                 <p>5BHK</p>
                             </div>
                         </div>
@@ -252,19 +254,19 @@
                     <div class="row my-3">
                         <div class="col-4 px-1">
                             <div class="wrap d-flex align-items-center justify-content-center">
-                                <i class="fas fa-plus"></i>
+                                <i class="zmdi zmdi-plus"></i>
                                 <p>6BHK</p>
                             </div>
                         </div>
                         <div class="col-4 px-1">
                             <div class="wrap d-flex align-items-center justify-content-center">
-                                <i class="fas fa-plus"></i>
+                                <i class="zmdi zmdi-plus"></i>
                                 <p>7BHK</p>
                             </div>
                         </div>
                         <div class="col-4 px-1">
                             <div class="wrap d-flex align-items-center justify-content-center">
-                                <i class="fas fa-plus"></i>
+                                <i class="zmdi zmdi-plus"></i>
                                 <p>8BHK</p>
                             </div>
                         </div>
@@ -272,13 +274,13 @@
                     <div class="row">
                         <div class="col-6 px-1">
                             <div class="wrap d-flex align-items-center justify-content-center">
-                                <i class="fas fa-plus"></i>
+                                <i class="zmdi zmdi-plus"></i>
                                 <p>9BHK</p>
                             </div>
                         </div>
                         <div class="col-6 px-1">
                             <div class="wrap d-flex align-items-center justify-content-center">
-                                <i class="fas fa-plus"></i>
+                                <i class="zmdi zmdi-plus"></i>
                                 <p>9+ BHK</p>
                             </div>
                         </div>
@@ -296,33 +298,33 @@
                 </div>
                 <div id="propertyContent">
                     <div id="true" class="wrap d-flex align-items-center my-2">
-                        <i class="fas fa-plus"></i>
+                        <i class="zmdi zmdi-plus"></i>
                         <p>Residential Apartment</p>
                     </div>
                     <div id="true" class="wrap d-flex align-items-center my-2">
-                        <i class="fas fa-plus"></i>
+                        <i class="zmdi zmdi-plus"></i>
                         <p>Independent/Builder Floor</p>
                     </div>
                     <div id="true" class="wrap d-flex align-items-center my-2">
-                        <i class="fas fa-plus"></i>
+                        <i class="zmdi zmdi-plus"></i>
                         <p>Residential Land</p>
                     </div>
                     <div id="true" class="wrap d-flex align-items-center my-2">
-                        <i class="fas fa-plus"></i>
+                        <i class="zmdi zmdi-plus"></i>
                         <p>Independent House/Villa</p>
                     </div>
                     <button id="button2" class="moreBtn" onclick="propertyTagToggle('button2','filterData2')">+3 More</button>
                     <div class="d-none" id="filterData2">
                     <div id="true" class="wrap d-flex align-items-center my-2">
-                        <i class="fas fa-plus"></i>
+                        <i class="zmdi zmdi-plus"></i>
                         <p>Farm House</p>
                     </div>
                         <div id="true" class="wrap d-flex align-items-center my-2">
-                            <i class="fas fa-plus"></i>
+                            <i class="zmdi zmdi-plus"></i>
                             <p>Studio Apartment</p>
                         </div>
                         <div id="true" class="wrap d-flex align-items-center my-2">
-                            <i class="fas fa-plus"></i>
+                            <i class="zmdi zmdi-plus"></i>
                             <p>Serviced Apartments</p>
                         </div>
                     </div>
@@ -386,11 +388,11 @@
                     </div>
                     <div id="constractionContent">
                         <div class="wrap d-flex align-items-center my-2">
-                            <i class="fas fa-plus"></i>
+                            <i class="zmdi zmdi-plus"></i>
                             <p>Ready to move</p>
                         </div>
                         <div class="wrap d-flex align-items-center my-2">
-                            <i class="fas fa-plus"></i>
+                            <i class="zmdi zmdi-plus"></i>
                             <p>Under Construction</p>
                         </div>
                     </div>
@@ -405,15 +407,15 @@
                     </div>
                     <div id="furnishedContent">
                         <div class="wrap d-flex align-items-center my-2">
-                            <i class="fas fa-plus"></i>
+                            <i class="zmdi zmdi-plus"></i>
                             <p>Semifurnished</p>
                         </div>
                         <div class="wrap d-flex align-items-center my-2">
-                            <i class="fas fa-plus"></i>
+                            <i class="zmdi zmdi-plus"></i>
                             <p>Unfurnished</p>
                         </div>
                         <div class="wrap d-flex align-items-center my-2">
-                            <i class="fas fa-plus"></i>
+                            <i class="zmdi zmdi-plus"></i>
                             <p>Furnished</p>
                         </div>
                     </div>
@@ -428,11 +430,11 @@
                     </div>
                     <div id="purchaseTypeContent">
                         <div class="wrap d-flex align-items-center my-2">
-                            <i class="fas fa-plus"></i>
+                            <i class="zmdi zmdi-plus"></i>
                             <p>Resale</p>
                         </div>
                         <div class="wrap d-flex align-items-center my-2">
-                            <i class="fas fa-plus"></i>
+                            <i class="zmdi zmdi-plus"></i>
                             <p>New Booking</p>
                         </div>
                     </div>
@@ -447,11 +449,11 @@
                     </div>
                     <div id="approveStatusContent">
                         <div class="wrap d-flex align-items-center my-2">
-                            <i class="fas fa-plus"></i>
+                            <i class="zmdi zmdi-plus"></i>
                             <p>RERA approved properties</p>
                         </div>
                         <div class="wrap d-flex align-items-center my-2">
-                            <i class="fas fa-plus"></i>
+                            <i class="zmdi zmdi-plus"></i>
                             <p>RERA registered dealers</p>
                         </div>
                     </div>
