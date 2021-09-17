@@ -31,7 +31,7 @@
 
 <link rel="stylesheet" href="{{URL::asset('assets/css/color_skins.css')}}">
 <style type="text/css">
-  
+
   .stretched-link::after {
     position: absolute;
     top: 0;
@@ -65,7 +65,7 @@
 <div class="page-loader-wrapper">
     <div class="loader">
         <div class="m-t-30"><img class="zmdi-hc-spin" src="{{URL::asset('assets/images/logo.svg')}}" width="48" height="48" alt="Oreo"></div>
-        <p>Please wait...</p>        
+        <p>Please wait...</p>
     </div>
 </div>
 <!-- Overlay For Sidebars -->
@@ -94,7 +94,7 @@
                                     <img class="media-object w60" src="../assets/images/image-gallery/1.jpg" alt="">
                                     <div class="media-body">
                                         <span class="name">Sophia <span class="time">For Sale</span></span>
-                                        <span class="message">Relaxing Apartment</span>                                        
+                                        <span class="message">Relaxing Apartment</span>
                                     </div>
                                 </div>
                             </a>
@@ -105,7 +105,7 @@
                                     <img class="media-object w60" src="../assets/images/image-gallery/2.jpg" alt="">
                                     <div class="media-body">
                                         <span class="name">Sophia <span class="time">For Rent</span></span>
-                                        <span class="message">Co-op Apartment in Bay Terrace</span>                                        
+                                        <span class="message">Co-op Apartment in Bay Terrace</span>
                                     </div>
                                 </div>
                             </a>
@@ -116,7 +116,7 @@
                                     <img class="media-object w60" src="../assets/images/image-gallery/3.jpg" alt="">
                                     <div class="media-body">
                                         <span class="name">Isabella <span class="time">For Rent</span></span>
-                                        <span class="message">A must see Villa on Chicago Ave</span>                                        
+                                        <span class="message">A must see Villa on Chicago Ave</span>
                                     </div>
                                 </div>
                             </a>
@@ -127,7 +127,7 @@
                                     <img class="media-object w60" src="../assets/images/image-gallery/4.jpg" alt="">
                                     <div class="media-body">
                                         <span class="name">Alexander <span class="time">For Sale</span></span>
-                                        <span class="message">5 Room Apartment Special Deal</span>                                        
+                                        <span class="message">5 Room Apartment Special Deal</span>
                                     </div>
                                 </div>
                             </a>
@@ -138,19 +138,19 @@
                                     <img class="media-object w60" src="../assets/images/image-gallery/5.jpg" alt="">
                                     <div class="media-body">
                                         <span class="name">Grayson <span class="time">For Rent</span></span>
-                                        <span class="message">Real House Luxury Villa</span>                                        
+                                        <span class="message">Real House Luxury Villa</span>
                                     </div>
                                 </div>
                             </a>
-                        </li>                        
+                        </li>
                     </ul>
                 </li>
                 <li class="footer"> <a href="javascript:void(0);">View All</a> </li>
             </ul>
-        </li>        
+        </li>
         <li class="hidden-sm-down">
-            
-        </li>        
+
+        </li>
         <li class="float-right mr-3">
             <a href="{{ route('logout') }}" onclick="event.preventDefault();
             document.getElementById('logout-form').submit();"><i class="zmdi zmdi-power"></i></a>
@@ -181,63 +181,63 @@
                             </div>
                             <a title="facebook" href="{{$facebook}}" target="_blank"> <i class="zmdi zmdi-facebook"></i></a>
                             <a title="twitter" href="{{$twitter}}"><i class="zmdi zmdi-twitter"></i></a>
-                            <a title="instagram" href="{{$insta}}"><i class="zmdi zmdi-instagram"></i></a>                            
+                            <a title="instagram" href="{{$insta}}"><i class="zmdi zmdi-instagram"></i></a>
                         </div>
                     </li>
-                    <li class="active open mt-1"><a href="/dashboard"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>                    
-                    <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-city"></i><span>Leads</span></a>
+                    <li class="active open mt-1"><a href="/dashboard"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>
+                    <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-trending-up"></i><span>Leads</span></a>
                         <ul class="ml-menu">
-                            <li><a href="/properties/list">Leads</a></li>
+                            <li class="d-flex justify-content-between pr-1 align-items-center"><a href="/properties/list">Leads</a> <span><i class="zmdi zmdi-plus"></i></span></li>
                         </ul>
                     </li>
                     <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-city"></i><span>Property</span></a>
                         <ul class="ml-menu">
-                            <li><a href="/properties/list">Properties List</a></li>
-                            <li><a href="/properties">Properties Table</a></li>
+                            <li class="d-flex justify-content-between pr-1 align-items-center"><a href="/properties/list">Properties List</a><span><i class="zmdi zmdi-plus"></i></span></li>
+                            <li class="d-flex justify-content-between pr-1 align-items-center"><a href="/properties">Properties Table</a><span><i class="zmdi zmdi-plus"></i></span></li>
                         </ul>
                     </li>
-                    <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-city"></i><span>Types</span></a>
+                    <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-arrow-split"></i><span>Types</span></a>
                         <ul class="ml-menu">
-                            <li><a href="apartment.html">Residential</a></li>
-                            <li><a href="office.html">Commercial</a></li>
+                            <li class="d-flex justify-content-between pr-1 align-items-center"><a href="apartment.html">Residential</a><span><i class="zmdi zmdi-plus"></i></span></li>
+                            <li class="d-flex justify-content-between pr-1 align-items-center"><a href="office.html">Commercial</a><span><i class="zmdi zmdi-plus"></i></span></li>
                         </ul>
                     </li>
-                    <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-accounts-outline"></i><span>Agents</span></a>
+                    <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-accounts"></i><span>Agents</span></a>
                         <ul class="ml-menu">
-                            <li><a href="/admin/users">All Agents</a></li>
+                            <li class="d-flex justify-content-between pr-1 align-items-center"><a href="/admin/users">All Agents</a><span><i class="zmdi zmdi-plus"></i></span></li>
                             <li><a href="{{route('users.show', (Auth::user()->id))}}">My Profile</a></li>
                         </ul>
                     </li>
                     <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-case-check"></i><span>Contract</span></a>
                         <ul class="ml-menu">
-                            <li><a href="contract-list.html">List</a></li>
+                            <li class="d-flex justify-content-between pr-1 align-items-center"><a href="contract-list.html">List</a><span><i class="zmdi zmdi-plus"></i></span></li>
                         </ul>
                     </li>
-                    
+
                     <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-accounts-outline"></i><span>Clients</span></a>
                         <ul class="ml-menu">
-                            <li><a href="/admin/users">All Clients</a></li>
-                            <li><a href="/admin/users/create">Buyers</a></li>
-                            <li><a href="/admin/users/create">Sellers</a></li>
+                            <li class="d-flex justify-content-between pr-1 align-items-center"><a href="/admin/users">All Clients</a><span><i class="zmdi zmdi-plus"></i></span></li>
+                            <li class="d-flex justify-content-between pr-1 align-items-center"><a href="/admin/users/create">Buyers</a><span><i class="zmdi zmdi-plus"></i></span></li>
+                            <li class="d-flex justify-content-between pr-1 align-items-center"><a href="/admin/users/create">Sellers</a><span><i class="zmdi zmdi-plus"></i></span></li>
                         </ul>
-                    </li>                    
+                    </li>
                     <li class="header">EXTRA COMPONENTS</li>
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-swap-alt"></i><span>Events</span></a>
                         <ul class="ml-menu">
-                            <li><a href="My Calender">Today</a></li>                    
-                            <li><a href="alerts.html">Day</a></li>                    
+                            <li><a href="My Calender">Today</a></li>
+                            <li><a href="alerts.html">Day</a></li>
                             <li><a href="collapse.html">Week</a></li>
                             <li><a href="colors.html">Month</a></li>
                         </ul>
-                    </li>                    
+                    </li>
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-assignment"></i><span>Company Book</span></a>
                         <ul class="ml-menu">
                             <li><a href="basic-form-elements.html">Company Name Book</a> </li>
                         </ul>
                     </li>
-                    
+
                     <li class="header">Extra</li>
                     <li>
                         <div class="progress-container progress-primary m-t-10">
@@ -294,7 +294,7 @@
                                 <div class="col-4">
                                     <h6 class="mb-1">234</h6>
                                     <small>Clients</small>
-                                </div>                            
+                                </div>
                             </div>
                         </div>
                     </li>
@@ -324,12 +324,12 @@
                                     <div class="progress-bar l-amber" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100" style="width: 78%"> <span class="sr-only">32% Complete</span> </div>
                                 </div>
                             </li>
-                        </ul>                        
+                        </ul>
                     </li>
                 </ul>
             </div>
         </div>
-    </div>    
+    </div>
 </aside>
 
 <!-- Right Sidebar -->
@@ -347,7 +347,7 @@
                 <li><img src="../assets/images/xs/avatar4.jpg" alt="Avatar"></li>
                 <li><img src="../assets/images/xs/avatar6.jpg" alt="Avatar"></li>
                 <li><a href="javascript:void(0);" title="Add Member"><i class="zmdi zmdi-plus-circle"></i></a></li>
-            </ul>                       
+            </ul>
         </div>
         <div class="body">
             <div class="chat-widget">
@@ -356,7 +356,7 @@
                     <img src="../assets/images/xs/avatar3.jpg" class="rounded-circle" alt="">
                     <div class="chat-info">
                         <a class="name" href="javascript:void(0);">Alexander</a>
-                        <span class="datetime">6:12</span>                            
+                        <span class="datetime">6:12</span>
                         <span class="message">Hello, John </span>
                     </div>
                 </li>
@@ -389,10 +389,10 @@
 
 <div id="content">
 
-    @yield('content')  
+    @yield('content')
 </div>
 
-<!-- Jquery Core Js --> 
+<!-- Jquery Core Js -->
 <script src="{{URL::asset('assets/bundles/libscripts.bundle.js')}}"></script>
 <script src="{{URL::asset('assets/bundles/vendorscripts.bundle.js')}}"></script>
 <script src="{{URL::asset('assets/plugins/dropzone/dropzone.js')}}"></script>

@@ -184,8 +184,11 @@ p{
 .icofont-company-icon i{
     font-size: 25px;
 }
-a.waves-effect.waves-block{
+/* a.waves-effect.waves-block{
     padding:10px !important;
+} */
+.sidebar .menu .list .ml-menu li a:before{
+    top: 11px;
 }
 .page-header-image{
     background-image: linear-gradient(red,red), url('../images/login.jpg');
@@ -411,4 +414,11 @@ h6, .h6{
 }
 label{
     font-size: 13px;
+}
+#dashboard i.zmdi-plus{
+    font-size: 15px;
+    color: #556e7a;
+}
+#dashboard ul li ul li:hover{
+    background-color: rgb(236, 235, 235);
 }
