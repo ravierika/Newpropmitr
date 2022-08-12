@@ -187,7 +187,7 @@
                     <li class="active open mt-1"><a href="/dashboard"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>
                     <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-trending-up"></i><span>Leads</span></a>
                         <ul class="ml-menu">
-                            <li class="d-flex justify-content-between pr-1 align-items-center"><a href="/properties/list">Leads</a> <span><i class="zmdi zmdi-plus"></i></span></li>
+                            <li class="d-flex justify-content-between pr-1 align-items-center"><a href="/leads">Leads List</a> <span><a href="/leads/create"><i class="zmdi zmdi-plus"></i></span></li></a>
                         </ul>
                     </li>
                     <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-city"></i><span>Property</span></a>

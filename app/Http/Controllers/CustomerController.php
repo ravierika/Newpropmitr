@@ -24,17 +24,18 @@ class CustomerController extends Controller
     public function index()
     {
         //
-        $comp=Auth::user()->company;
+        $comp=Auth::user()->companyid;
+        $compn=Auth::user()->company;        
         $name=Auth::user()->name;
         $role=Auth::user()->role->name;
         $facebook=Auth::user()->facebook;
         $twitter=Auth::user()->twitter;
         $insta=Auth::user()->insta;
         $linkedin=Auth::user()->linkedin;
-        $customers = Customer::Where(function ($query) use($comp) {
-            $query->where('company', '=', $comp);
+        $customers = Customer::Where(function ($query) use($compn) {
+            $query->where('company', '=', $compn);
         })->get();
-        return view('customer.index', compact('customers', 'comp', 'name', 'role', 'facebook', 'twitter', 'insta', 'linkedin'));
+        return view('customer.index', compact('customers', 'compn', 'comp','name', 'role', 'facebook', 'twitter', 'insta', 'linkedin'));
     }
 
     /**
@@ -45,14 +46,15 @@ class CustomerController extends Controller
     public function create()
     {
         //
-        $comp=Auth::user()->company;
+        $comp=Auth::user()->companyid;
+        $compn=Auth::user()->company;             
         $name=Auth::user()->name;
         $role=Auth::user()->role->name;
         $facebook=Auth::user()->facebook;
         $twitter=Auth::user()->twitter;
         $insta=Auth::user()->insta;
         $linkedin=Auth::user()->linkedin;
-        return view('customer.create', compact('comp', 'name', 'role', 'facebook', 'twitter', 'insta', 'linkedin'));
+        return view('customer.create', compact('comp', 'compn','name', 'role', 'facebook', 'twitter', 'insta', 'linkedin'));
     }
 
     /**

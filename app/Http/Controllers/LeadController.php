@@ -25,6 +25,20 @@ class LeadController extends Controller
     public function index()
     {
         //
+        $comp=Auth::user()->companyid;
+        $compn=Auth::user()->company;
+        $name=Auth::user()->name;
+        $role=Auth::user()->role->name;
+        $facebook=Auth::user()->facebook;
+        $twitter=Auth::user()->twitter;
+        $insta=Auth::user()->insta;
+        $linkedin=Auth::user()->linkedin;
+        $users = User::Where(function ($query) use($comp, $name) {
+            $query->where('companyid', '=', $comp);
+            $query->where('name', '!=', $name);
+        })->get();
+        //return $users;
+        return view('lead.index', compact('users', 'compn', 'name', 'role', 'facebook', 'twitter', 'insta', 'linkedin'));
     }
 
     /**
@@ -35,44 +49,15 @@ class LeadController extends Controller
     public function create()
     {
         //
-        $comp = Auth::user()->company;
+        $compn=Auth::user()->company;
         $name=Auth::user()->name;
         $role=Auth::user()->role->name;
         $facebook=Auth::user()->facebook;
         $twitter=Auth::user()->twitter;
         $insta=Auth::user()->insta;
         $linkedin=Auth::user()->linkedin;
-        $cityn = Location::all();
-        foreach ($cityn as $cityn) 
-                {
-                    $cityf[] = $cityn->city;
-                
-                }
-                $cityff = json_encode($cityf);
-        $local = Location::all();        
-        foreach ($local as $local) 
-                {
-                    $localf[] = $local->locality;
-                
-                }
-                $localff = json_encode($localf);
-
-                $cust = Customer::Where(function ($query) use($comp) {
-                    $query->where('company', '=', $comp);
-                })->get();
-                if($cust->isEmpty()){
-                    $custf[] = '';
-                }
-                foreach ($cust as $cust) 
-                        {
-                            $custf[] = $cust->name;
-                        }
-                        $custff = json_encode($custf); 
-                $users = User::Where(function ($query) use($comp) {
-                    $query->where('company', '=', $comp);
-                })->get();                 
-        return view('lead.create', compact('users','custff', 'comp', 'name', 'role', 'facebook', 'twitter', 'insta', 'linkedin', 'localff', 'cityff'));
-
+        return view('lead.create', compact('compn', 'name', 'role', 'facebook', 'twitter', 'insta', 'linkedin'));
+    
     }
 
     /**
