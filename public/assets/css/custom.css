@@ -451,3 +451,15 @@ section.content:before{
     position: relative;
     top: 2px;
 }
+
+/* ------------- */
+textarea{
+    outline: none;
+}
+.kids_value{
+    text-align: center;
+    width: 100px;
+}
+.kids_handler{
+    margin: 0px 10px;
+}

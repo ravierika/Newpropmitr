@@ -21,6 +21,10 @@ Route::get('/terms', function () {
     return view('termsAndCondition');
 });
 
+Route::get('/airTicket', function () {
+    return view('airTicket');
+});
+
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 

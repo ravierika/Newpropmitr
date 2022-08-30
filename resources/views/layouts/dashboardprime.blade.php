@@ -184,12 +184,32 @@
                             <a title="instagram" href="{{$insta}}"><i class="zmdi zmdi-instagram"></i></a>
                         </div>
                     </li>
+
                     <li class="active open mt-1"><a href="/dashboard"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>
+
                     <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-trending-up"></i><span>Leads</span></a>
                         <ul class="ml-menu">
                             <li class="d-flex justify-content-between pr-1 align-items-center"><a href="/leads">Leads List</a> <span><a href="/leads/create"><i class="zmdi zmdi-plus"></i></span></li></a>
                         </ul>
                     </li>
+
+
+
+                    <li class="d-flex align-items-center justify-content-between">
+                        <a href="/flights"><i class="zmdi zmdi-airplane"></i><span>Flights</span></a>
+                        <a href="/flights/create" class="p-0" href="javascript:void(0);"><i class="zmdi zmdi-plus"></i></a>
+                    </li>
+                    <li class="d-flex align-items-center justify-content-between">
+                        <a href="/hotels"><i class="zmdi zmdi-hotel"></i><span>Hotels</span></a>
+                        <a href="/hotels/create" class="p-0" href="javascript:void(0);"><i class="zmdi zmdi-plus"></i></a>
+                    </li>
+                    <li class="d-flex align-items-center justify-content-between">
+                        <a href="/packages"><i class="zmdi zmdi-assignment"></i><span>Packages</span></a>
+                        <a href="/packages/create" class="p-0" href="javascript:void(0);"><i class="zmdi zmdi-plus"></i></a>
+                    </li>
+
+
+
                     <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-city"></i><span>Property</span></a>
                         <ul class="ml-menu">
                             <li class="d-flex justify-content-between pr-1 align-items-center"><a href="/properties/list">Properties List</a><span><i class="zmdi zmdi-plus"></i></span></li>
