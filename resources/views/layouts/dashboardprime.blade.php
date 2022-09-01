@@ -189,7 +189,11 @@
 
                     <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-trending-up"></i><span>Leads</span></a>
                         <ul class="ml-menu">
-                            <li class="d-flex justify-content-between pr-1 align-items-center"><a href="/leads">Leads List</a> <span><a href="/leads/create"><i class="zmdi zmdi-plus"></i></span></li></a>
+                            <li class="d-flex justify-content-between pr-1 align-items-center"><a href="/leads">Leads Flight</a> <span><a href="/leads/create"><i class="zmdi zmdi-plus"></i></a></span></li>
+
+                            <li class="d-flex justify-content-between pr-1 align-items-center"><a href="/leads">Leads Hotel</a> <span><a href="/leads/hotel/create"><i class="zmdi zmdi-plus"></i></a></span></li>
+
+                            <li class="d-flex justify-content-between pr-1 align-items-center"><a href="/leads">Leads Packages</a> <span><a href="/leads/packages/create"><i class="zmdi zmdi-plus"></i></a></span></li>
                         </ul>
                     </li>
 
