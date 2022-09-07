@@ -197,6 +197,12 @@
                         </ul>
                     </li>
 
+                    <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-album"></i><span>Corporates</span></a>
+                        <ul class="ml-menu">
+                            <li class="d-flex justify-content-between pr-1 align-items-center"><a href="/leads">Corporate</a> <span><a href="/corporate/create"><i class="zmdi zmdi-plus"></i></a></span></li>
+                        </ul>
+                    </li>
+
 
 
                     <li class="d-flex align-items-center justify-content-between">
